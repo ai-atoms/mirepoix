@@ -8,7 +8,7 @@
 [Camilo A. F. Salvador](https://github.com/camilofs)
 
 ### Contributors  
-Maxime Filimonov, Clovis Lapointe, Mihai-Cosmin Marinica.
+Clovis Lapointe, Mihai-Cosmin Marinica.
 
 ### Reference (paper 26)
 **Deep Learning reveals latent irradiation defects in transmission electron micrographs of iron**  

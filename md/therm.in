@@ -1,0 +1,57 @@
+# LAMMPS Input File
+# Authors: /camilofs @ github.com
+# Input file for simple thermalisation
+# metal : [m] = g/mol, [x] = A, [E]=eV, [q]=e, [T]=K, [t]=ps, [P]=bars=1e5Pa
+
+# --- Static variables ---
+variable    rseed            equal 486215937 # RNG seed
+variable    temperature      equal 300
+variable    timestep_md      equal 0.002     # 2 fs
+variable    total_therm      equal 500000    # 1 ns
+
+# --- Initialize simulation ---
+clear
+units metal
+dimension 3
+boundary p p p
+atom_style atomic
+
+# --- Read Structure ---
+read_data   8.lmp
+
+# --- Define Interatomic Potential ---
+pair_style eam/alloy
+pair_coeff * * M07_eam.fs Fe
+neighbor 2.0 bin
+neigh_modify delay 10 check yes
+
+# --- MD Thermalization ---
+print "Initializing thermalisation..."
+timestep ${timestep_md}
+
+# Initial velocities
+velocity all create ${temperature} ${rseed} dist gaussian
+
+# Thermostat 1
+fix 1 all nvt temp ${temperature} ${temperature} 0.4
+fix 2 all temp/berendsen ${temperature} ${temperature} 100.0
+
+# Output
+thermo  5000
+thermo_style    custom step etotal pe ke fnorm temp pxx pyy pzz pxy pxz pyz press vol
+thermo_modify   flush yes
+
+shell mkdir therm
+dump            1 all custom 250000 therm/therm.*.dump id mass type x y z
+
+# Run relaxation 1
+run ${total_therm}
+
+unfix 1
+unfix 2
+undump 1
+
+write_restart restart.therm
+
+print "-- all done --"
+

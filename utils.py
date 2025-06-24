@@ -46,14 +46,14 @@ if __name__ == "__main__":
     # ASE's automatic assignment: type1=H, type2=He, type3=Li, etc.
     # Map these to your desired elements
     type_mapping = {
-        'H': 'Al'}   # type 1 becomes Aluminum
-        # 'He': 'X',  # type 2 becomes Cobalt
-        # 'Li': 'X',  # type 3 becomes Nickel
+        'H': 'Fe'}   # type 1 becomes Fe
+        # 'He': 'X',  # type 2 becomes X
+        # 'Li': 'X',  # type 3 becomes X
         # Add more mappings as needed for your system
 
     # Process the files
     process_lammps_dump(
-        input_file='md_config_252000.xyz',
-        output_file='252000.cfg',
+        input_file='data/fpa60/selected/dump3/md_config_604000.xyz',
+        output_file='data/fpa60/selected/cfg3/604000.cfg',
         type_map=type_mapping,
     )

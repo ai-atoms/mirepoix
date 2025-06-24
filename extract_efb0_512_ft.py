@@ -10,12 +10,12 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torchvision.transforms as T
-from model import EfficientNetFeatureExtractor
+from dmodel import EfficientNetFeatureExtractor
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Initialize EN-B0 (fine-tuned FeatExtract)
 feature_extractor = EfficientNetFeatureExtractor().to(device)
-full_state_dict = torch.load("data/models/20250528_1138/best_model.pth", map_location=device)
+full_state_dict = torch.load("data/models/dsc_d9_20250624_1113/best_model.pth", map_location=device)
 filtered_state_dict = {k: v for k, v in full_state_dict.items() if not k.startswith('regression_head')}
 feature_extractor.model.load_state_dict(filtered_state_dict, strict=False)
 feature_extractor.eval()

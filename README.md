@@ -12,7 +12,7 @@ Clovis Lapointe, Mihai-Cosmin Marinica.
 
 ### Reference (paper 26)
 **Deep Learning reveals latent irradiation defects in transmission electron micrographs of iron**  
-The aim of this work is to uncover hidden correlations between nanoscale defects and their macroscopic signatures, accelerating the study of irradiation effects in metallic materials."
+The aim of this work is to uncover hidden correlations between nanoscale defects and their local atomic environments (LAEs) signatures, accelerating the study of irradiation effects in metallic materials."
 
 ### How to cite
 If you use this package, please cite:  

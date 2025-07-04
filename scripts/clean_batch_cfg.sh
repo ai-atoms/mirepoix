@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set directories
-target_folder="data/fpa50/cfg"
-output_folder="data/fpa50/cfg2"
+target_folder="data/fpa70/selected/cfg"
+output_folder="data/fpa70/selected/cfg2"
 
 # Create output directory if it doesn't exist
 mkdir -p "$output_folder"

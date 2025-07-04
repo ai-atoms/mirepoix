@@ -57,3 +57,18 @@ if __name__ == "__main__":
         output_file='data/fpa60/selected/cfg3/604000.cfg',
         type_map=type_mapping,
     )
+
+    input_folder = 'data/fpa70/selected/dump'
+    output_folder = 'data/fpa70/selected/cfg'
+    for file in os.listdir(input_folder):
+        filename = file.split('.xyz')[0]
+        print (file, filename)
+        
+        process_lammps_dump(
+            input_file=f'{input_folder}/{file}',
+            output_file=f'{output_folder}/{filename}.cfg',
+            type_map=type_mapping,
+        )
+    
+
+

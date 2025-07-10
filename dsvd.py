@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 from natsort import natsorted
 
-base_path = "temp"
-target_path = os.path.join(base_path, "targets_1024")
+base_path = "results/feat_gen_f70/rs_169006142"
+target_path = os.path.join(base_path, "targets_15360")
 
 # Natural sort of .npy files
 npy_files = natsorted([
@@ -36,7 +36,7 @@ U, s, Vh = svd(cov_matrix)  # s: singular values (sorted in descending order)
 print("Singular values:", s)
 
 # Effective rank (number of significant singular values)
-rank = np.sum(s > 1e-10)  # Adjust threshold based on magnitude
+rank = np.sum(s > 1e-6)  # Adjust threshold based on magnitude
 print("Effective rank of y_features:", rank, "/", y_train.shape[1])
 
 plt.plot(s, 'o-')
@@ -53,7 +53,7 @@ plt.show()
 n_components = len(s)  # Number of features
 
 # For the top-k SVD components (e.g., k=5), find original features with highest weights
-top_k_components = 5
+top_k_components = 8
 original_feature_importance = []
 
 for i in range(top_k_components):
@@ -65,7 +65,7 @@ for i in range(top_k_components):
 for comp_idx, singular_val, features in original_feature_importance:
     print(f"SVD Component {comp_idx} (σ={singular_val:.2f}): Original features = {features}")
 
-top_k_per_component = 128  # Adjust based on your tolerance for redundancy
+top_k_per_component = 16  # Adjust based on your tolerance for redundancy
 selected_features = set()
 
 for i in range(rank):  # Top components

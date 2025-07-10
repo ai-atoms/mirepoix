@@ -17,6 +17,7 @@ def load_lammps_with_real_symbols(input_path, custom_map):
     atoms.set_chemical_symbols(real_symbols)
     return atoms
 
+
 def process_lammps_dump(input_file, output_file, type_map):
     """
     Process LAMMPS dump file: wrap atoms, remove all velocity info, remap types, save as CFG

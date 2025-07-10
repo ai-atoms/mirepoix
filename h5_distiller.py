@@ -142,7 +142,7 @@ class H5Manager :
 
 
 # -- inputs
-path_h5 = 'data/fpa70/descriptor/fpa70_dist.h5'
+path_h5 = 'data/fpa50/descriptor/fpa50_dist.h5'
 
 
 # -- camilofs utility additions
@@ -487,6 +487,6 @@ export_distance_sample(
     distance_key=str(selected))
 '''
 
-create_combined_vector(h5_obj, dist_keys, n_features=1024, random_seed=169006) # (n_features,)
+create_combined_vector(h5_obj, dist_keys, n_features=15360, random_seed=169006142) # (n_features,)
 
 # -- end

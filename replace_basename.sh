@@ -12,7 +12,7 @@ for file in 00_000_*.npy; do
     [ -e "$file" ] || continue
 
     # New filename with 70_ prefix
-    new_name="${file/00_/50_}"
+    new_name="${file/00_/72_}"
 
     # Rename the file
     mv "$file" "$new_name"

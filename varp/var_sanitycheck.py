@@ -1,41 +1,69 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.cm import viridis
+from matplotlib.colors import to_hex
+import scienceplots
+
+plt.style.use(['science'])
+plt.rcParams['figure.figsize'] = (6, 6)
+plt.rcParams['font.size'] = 24
+plt.rcParams['lines.linewidth'] = 2
 
 # Settings
-feature_indices = [7, 10, 11, 15, 17, 22, 27, 31, 34, 37, 40, 46, 49, 56, 57, 62]
-root_dir = 'data/datasets/dsf60_d9'
-target_folder = f'{root_dir}/r2targets/'
+root_dir = 'data/datasets/d567b'
+target_folder = f'{root_dir}/r3targets/'
 
 # Load all .npy files from the folder
 all_data = []
 for fname in sorted(os.listdir(target_folder)):
-    if fname.endswith('.npy'):
-        path = os.path.join(target_folder, fname)
-        data = np.load(path)
-        all_data.append(data)
+    if '70_' in fname:
+        if fname.endswith('.npy'):
+            path = os.path.join(target_folder, fname)
+            data = np.load(path)
+            all_data.append(data)
 
 # Stack all files into a single array (assuming same shape per sample)
-all_data = np.stack(all_data, axis=0)  # shape: (num_samples, num_features)
+data = np.stack(all_data, axis=0)  # shape: (num_samples, num_features)
+print (data.shape)
 
-# Select only the requested features
-selected_data = all_data[:, feature_indices]  # shape: (num_samples, len(feature_indices))
+# Define groups
+group1 = [0, 4, 5, 7, 8, 9, 10, 11, 13, 14]  # 10 variables
+group1 = sorted(group1, key=lambda x: data[-1, x], reverse=True)
 
-# Plot each feature in a 4x4 grid
-fig, axes = plt.subplots(4, 4, figsize=(16, 12))
-axes = axes.flatten()
+group2 = [1, 2, 3, 6, 12, 15]  # 6 variables (Note: 15 was in both groups, so I removed it)
+group2 = sorted(group2, key=lambda x: data[-1, x], reverse=True)
 
-for i, feat_idx in enumerate(feature_indices):
-    ax = axes[i]
-    ax.plot(selected_data[:, i])
-    ax.set_title(f'Feature {feat_idx}', fontsize=10)
-    ax.set_xlim([0, 32])  # Limit x-axis
-    ax.tick_params(axis='both', labelsize=8)
+# Create a 2x1 subplot layout
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
 
+# Custom colors for each group (Viridis colormap)
+n1 = len(group1)  # Number of variables in group1
+n2 = len(group2)  # Number of variables in group2
 
-# Hide any unused subplots (if len(feature_indices) < 16)
-for j in range(len(feature_indices), 16):
-    axes[j].axis('off')
+# Generate Viridis colors for each group
+colors_group1 = [to_hex(viridis(i / n1)) for i in range(n1)]
+colors_group2 = [to_hex(viridis(i / n2)) for i in range(n2)]
 
-plt.tight_layout()
+# Plot group1 (top subplot)
+for i, var_idx in enumerate(group1):
+    ax1.plot(data[:, var_idx], color=colors_group1[i], lw=1.5, label=f'f{var_idx}')
+
+ax1.set_title('(a)')
+# ax1.grid(True)
+ax1.legend(loc='lower center', ncol=3, fontsize=12) #, bbox_to_anchor=(1.15, 1))  # Place legend outside
+ax1.set_xlim(0, 150)
+ax1.set_ylim(0.0, 0.8)
+
+# Plot group2 (bottom subplot)
+for i, var_idx in enumerate(group2):
+    ax2.plot(data[:, var_idx], color=colors_group2[i], lw=1.5, label=f'f{var_idx}')
+
+ax2.set_title('(b)')
+# ax2.grid(True)
+ax2.legend(loc='upper center', ncol=2, fontsize=12) # , bbox_to_anchor=(1.15, 1))  # Place legend outside
+ax2.set_xlim(0, 150)
+ax2.set_ylim(0.6, 1.0)
+
+plt.tight_layout()  # Adjust spacing
 plt.show()

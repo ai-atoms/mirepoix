@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 from natsort import natsorted
 
-data_root = 'data/fpa70/selected/cfg2'
-output_file = 'ovito_results_f70.csv'
+data_root = 'data/fpa50/selected/cfg2'
+output_file = 'ovito_f50.csv'
 
 # -- import
 file_list = []

@@ -14,6 +14,7 @@ sys.path.insert(0,'../../')
 from dfct_storage import DfctAnalysisStorage
 
 # -- camilofs
+import pandas as pd
 from matplotlib.cm import viridis
 from matplotlib.colors import to_hex
 import scienceplots
@@ -24,6 +25,7 @@ plt.style.use(['science'])
 #plt.rcParams['text.latex.preamble'] = r'\usepackage{amsmath}'
 
 fontsize = 16
+csv_data = []
 
 class PlotDistribution : 
     """ Analysis class for comparison beteween nanophases populations and dislocation populations"""
@@ -129,10 +131,26 @@ class PlotDistribution :
         convertion_factor = 1.0e20
         key_dislo = self.get_dislocation_keys()
         data_distribution = self.pkl_data.data_distribution
-        print([(key, len(val['C15'])) for key, val in data_distribution.items()])
+        # -- camilofs
+        # print([(key, len(val['C15'])) for key, val in data_distribution.items()])
         # exit(0)
 
-        for k_d in key_dislo : 
+        for key in data_distribution.keys():
+            row = {"key": key}
+
+            # Add all dislocation values
+            for k_d in key_dislo:
+                row[k_d] = data_distribution[key].get(k_d, None)  # Safe get
+
+            # Add 'C15' field if present
+            if "C15" in data_distribution[key]:
+                row["C15"] = data_distribution[key]["C15"]
+
+            csv_data.append(row)
+        
+        # -- end of camilofs extraction
+
+        for k_d in key_dislo : # only dislocations (excludes C15)
             array_data_k_d = np.array([data_distribution[key][k_d] for key in data_distribution.keys()])
             axis.plot(self.array_dose, 
                       array_data_k_d*convertion_factor,
@@ -219,6 +237,8 @@ class PlotDistribution :
         for id, key in enumerate(data_distribution.keys()) :
             dose = self.array_dose[id]
             data_nano = data_distribution[key][name_nano]
+            # -- camilofs check
+            # csv_data.append({"key": key, "values": data_nano})  # stores list directly
 
             array_dose += [dose for k in range(len(data_nano))]
             array_nano += data_nano.tolist()
@@ -293,15 +313,15 @@ class PlotDistribution :
         cbar = fig.colorbar(array, ax=axis[1], pad=0.0)
         cbar.ax.tick_params(labelsize=15)  # Increase tick label font size
 
-        plt.savefig(f'distribution_{nano_phase}_dislo.png', dpi=300)
-        plt.savefig(f'distribution_{nano_phase}_dislo.pdf', dpi=300)
+        # plt.savefig(f'distribution_{nano_phase}_dislo.png', dpi=300)
+        # plt.savefig(f'distribution_{nano_phase}_dislo.pdf', dpi=300)
         # plt.show()
         return 
     
 ########################################
 ### INPUTS
 ########################################
-path_data = 'data/fpa70/descriptor/fpa70_distribution.pkl'
+path_data = 'data/fpa50/descriptor/fpa50_distribution.pkl'
 #######################################
 
 obj_plot = PlotDistribution(path_data,
@@ -310,3 +330,6 @@ obj_plot = PlotDistribution(path_data,
 obj_plot.plot_distribution('C15',
                            colormap='viridis',
                            log_x=False)
+
+df = pd.DataFrame(csv_data)
+df.to_csv("pkl_f50.csv", index=False)

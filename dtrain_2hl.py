@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision.transforms as T
 from torch.utils.data import DataLoader, random_split
-from dmodel import EfficientNetRegression, DefectDataset
+from dmodel import EfficientNetRegression2HL, DefectDataset
 from tqdm import tqdm
 
 # Deterministic runs
@@ -26,7 +26,7 @@ transform = T.Compose([
 ])
 
 # Load dataset
-dataset = DefectDataset("data/datasets/d567/images", "data/datasets/d567/rtargets", transform=transform)
+dataset = DefectDataset("data/datasets/d567b/images", "data/datasets/d567b/rtargets", transform=transform)
 
 # Split dataset into training and testing sets
 train_size = int(0.8 * len(dataset))
@@ -37,7 +37,7 @@ train_loader = DataLoader(train_dataset, batch_size=12, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=8, shuffle=False)
 
 # -- Initialize model, loss function, and optimizer
-model = EfficientNetRegression(base_model='b5', weights='DEFAULT', output_dim=640) # weights='DEFAULT' or None
+model = EfficientNetRegression2HL(base_model='b0', weights='DEFAULT', output_dim=640) # weights='DEFAULT' or None
 # model.load_state_dict(torch.load('efficientnet_b3_rwightman-b3899882.pth'), strict=False)
 
 criterion = nn.MSELoss()
@@ -50,8 +50,8 @@ criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Training config
-epochs = 128
-eval_interval = 8
+epochs = 256
+eval_interval = 4
 log_file = "training_log.csv"
 best_model_path = 'best_model.pth'
 
@@ -124,7 +124,7 @@ with open(log_file, 'a') as f:
 import datetime
 os.makedirs("saved_models", exist_ok=True)  # Create directory if needed
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M")
-save_path = f"saved_models/enb0_d567_reg640_{timestamp}.pth"
+save_path = f"saved_models/enb0_2hl_d567b_reg640_{timestamp}.pth"
 torch.save(model.state_dict(), save_path)
 
 # Empty cache

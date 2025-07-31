@@ -8,24 +8,35 @@ from PIL import Image
 import numpy as np
 
 import torch
+import torch.nn as nn
 import torchvision.transforms as T
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+import pretrained_microscopy_models as pmm
 
-# Initialize DINOv2 model
-# /home/camilofs/.cache/torch/hub/checkpoints/dinov2_vitl14_pretrain.pth
-dinov2_vitx14 = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14') # large model ~ 300 M
-dinov2_vitx14.eval().to(device) # using GPU
+# Initialize EN-B0 with DEFAULT weights 
+from torchvision.models import efficientnet_b3
+efb3_full = efficientnet_b3(weights='DEFAULT')
+efb3 = nn.Sequential(*list(efb3_full.features.children()))  # Only encoder
+
+# Remove the original classifier (and add pooling to obtain [1, 2048, 7, 7] -> [1, 2048])
+# efb3.classifier = nn.Identity() # ! 
+efb3.classifier = nn.Sequential(
+    nn.AdaptiveAvgPool2d(1),
+    nn.Flatten()
+)
+
+# Sanity check
+print(efb3(torch.randn(1, 3, 320, 320)).shape)  # Should be [1, 2048]
 
 # Define image transform
 transform = T.Compose([
-    T.Resize((588, 588)), # multiple of patch height = 14
+    T.Resize((320, 320)),
     T.ToTensor(),
     T.Normalize(mean=[0.5], std=[0.5])
 ])
 
 # Input and output directories
 input_dir = 'data/datasets/d567b/images'
-output_dir = os.path.join(os.path.dirname(input_dir), 'enc_images/dino_in')
+output_dir = os.path.join(os.path.dirname(input_dir), 'enc_images/efb3_in')
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
@@ -38,10 +49,9 @@ for filename in os.listdir(input_dir):
         image = Image.open(image_path).convert("RGB")
         img_t = transform(image)
         
-        # Get DINOv2 embedding
+        # Get EFN embedding
         with torch.no_grad():
-            enc_img_t = dinov2_vitx14(img_t.unsqueeze(0).to(device)) # using GPU
-            enc_img_t = enc_img_t.cpu().detach().numpy() # safe conversion
+            enc_img_t = efb3(img_t.unsqueeze(0)).detach().numpy()
         
         # Save embedding
         output_path = os.path.join(output_dir, filename.replace('.png', '.npy'))

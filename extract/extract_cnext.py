@@ -22,18 +22,19 @@ convnext.classifier = nn.Sequential(
 convnext.eval()  # Set to eval mode
 
 # Sanity check
-print(convnext(torch.randn(1,3,224,224)).shape)  # Should be [1, 1536]
+print(convnext(torch.randn(1,3,384,384)).shape)  # Should be [1, 1536]
+
 
 # Define image transform
 transform = T.Compose([
-    T.Resize((224, 224)),
+    T.Resize((384, 384)),
     T.ToTensor(),
     T.Normalize(mean=[0.5], std=[0.5])
 ])
 
 # Input and output directories
-input_dir = 'data/sample/abtem/'
-output_dir = os.path.join(os.path.dirname(os.path.dirname(input_dir)), 'img_descriptors/convnext')
+input_dir = 'data/datasets/d567b/images'
+output_dir = os.path.join(os.path.dirname(input_dir), 'enc_images/convnext_in')
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Target folder
-folder="data/fpa70/selected/images_ovito"
+folder="data/fpa70/selected/images_ovito_p3"
 
 # Change to the target directory
 cd "$folder" || { echo "Folder not found!"; exit 1; }

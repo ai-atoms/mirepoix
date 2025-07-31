@@ -19,7 +19,7 @@ gvit_l16.heads.head = nn.Identity() # remove head
 gvit_l16.eval()
 
 # Sanity check
-print(gvit_l16(torch.randn(1,3,224,224)).shape)  # Should be [1, 1280]
+print(gvit_l16(torch.randn(1,3,224,224)).shape)  # Should be [1, 1024]
 
 # Define image transform
 transform = T.Compose([
@@ -29,8 +29,8 @@ transform = T.Compose([
 ])
 
 # Input and output directories
-input_dir = 'data/sample/abtem/'
-output_dir = os.path.join(os.path.dirname(os.path.dirname(input_dir)), 'img_descriptors/g_vitl16')
+input_dir = 'data/datasets/d567b/images'
+output_dir = os.path.join(os.path.dirname(input_dir), 'enc_images/vitl16_in')
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)

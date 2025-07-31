@@ -12,36 +12,31 @@ import torch.nn as nn
 import torchvision.transforms as T
 import pretrained_microscopy_models as pmm
 
-# Initialize EN-B0 with MicroNet weights 
-# /home/camilofs/.cache/torch/hub/checkpoints/efficientnet-b0_pretrained_microscopynet_v1.0.pth.tar
-efb0 = torch.hub.load('NVIDIA/DeepLearningExamples:torchhub', 'nvidia_efficientnet_b0', pretrained=False)
+# Initialize EN-B0 with DEFAULT weights 
+from torchvision.models import efficientnet_b0
+efb0_full = efficientnet_b0(weights='DEFAULT')
+efb0 = nn.Sequential(*list(efb0_full.features.children()))  # Only encoder
 
-# Remove the original classifier (and add pooling to obtain [1, 1280, 7, 7] -> [1, 1280])
+# Remove the original classifier (and add pooling to obtain [1, 2048, 7, 7] -> [1, 2048])
 # efb0.classifier = nn.Identity() # ! 
 efb0.classifier = nn.Sequential(
     nn.AdaptiveAvgPool2d(1),
     nn.Flatten()
 )
 
-# Load and filter state dict
-url = pmm.util.get_pretrained_microscopynet_url('efficientnet-b0', 'micronet')
-state_dict = torch.hub.load_state_dict_from_url(url, map_location=torch.device('cpu'))
-filtered_state_dict = {k: v for k, v in state_dict.items() if not k.startswith('classifier.')}
-efb0.load_state_dict(filtered_state_dict, strict=False)
-
 # Sanity check
-print(efb0(torch.randn(1,3,512,512)).shape)  # Should be [1, 1280]
+print(efb0(torch.randn(1, 3, 256, 256)).shape)  # Should be [1, 2048]
 
 # Define image transform
 transform = T.Compose([
-    T.Resize((512, 512)),
+    T.Resize((256, 256)),
     T.ToTensor(),
     T.Normalize(mean=[0.5], std=[0.5])
 ])
 
 # Input and output directories
-input_dir = 'data/sample/abtem/'
-output_dir = os.path.join(os.path.dirname(os.path.dirname(input_dir)), 'img_descriptors/efb0_512')
+input_dir = 'data/datasets/d567b/images'
+output_dir = os.path.join(os.path.dirname(input_dir), 'enc_images/efb0_in')
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)

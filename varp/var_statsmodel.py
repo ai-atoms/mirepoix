@@ -9,19 +9,43 @@ import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from statsmodels.tsa.vector_ar.var_model import VAR
 
+from matplotlib.cm import viridis
+from matplotlib.colors import to_hex
+import scienceplots
+import pandas as pd
+
+# ---------------------------
+# 1. Setup SciencePlots + Viridis palette
+# ---------------------------
+plt.style.use(['science'])
+
+mycolors = [to_hex(viridis(i / 5)) for i in range(5)]
+plt.rcParams['axes.prop_cycle'] = plt.cycler(color=mycolors)
+plt.rcParams['figure.figsize'] = (6, 6)
+plt.rcParams['font.size'] = 24
+plt.rcParams['lines.linewidth'] = 2
+edge_colors = plt.cycler(color=mycolors)
+
 
 class RobustVARDataset:
-    def __init__(self, target_folder, feature_indices, p=3):
+    def __init__(self, target_folder, desired_fname='f_70', p=4):
         self.p = p
-        self.feature_indices = feature_indices
+        self.desired_fname = desired_fname
+        self.target_files = sorted(
+            [f for f in os.listdir(target_folder) 
+             if (self.desired_fname in f) and f.endswith('.npy')],
+            key=lambda x: int(x.split('_')[-1].split('.')[0])
+        )
         
-        # Load and prepare data
-        self.target_files = sorted([f for f in os.listdir(target_folder) if f.endswith('.npy')],
-                                 key=lambda x: int(x.split('_')[-1].split('.')[0]))
-        
-        full_data = np.stack([np.load(os.path.join(target_folder, f)).squeeze() 
-                            for f in self.target_files])
-        self.data = full_data[:, feature_indices]  # (127, 16)
+        # Load and stack data from filtered files
+        self.data = np.stack([
+            np.load(os.path.join(target_folder, f)).squeeze() 
+            for f in self.target_files
+        ])  # Shape: (n_samples, n_features)
+
+        # Optional: Print info
+        print(f"Loaded {len(self.target_files)} files matching '{desired_fname}'.")
+        print(f"Data shape: {self.data.shape}")
         
         # Normalize
         self.data_mean = self.data.mean(axis=0)
@@ -52,107 +76,248 @@ class RobustVARDataset:
             return model.fit(maxlags=safe_maxlags, method='ols')
 
 
-def evaluate_statsmodels_var_first32(results, dataset, confidence=0.95):
+def evaluate_statsmodels_var_old(results, dataset, confidence=0.95):
     """
-    Evaluate Statsmodels VAR model predictions for first 32 observations
-    with predictions shown only from 16-32 in true (original) scale
-    
-    Args:
-        results: Fitted VARResults object
-        dataset: RobustVARDataset instance
-        confidence: Confidence level for intervals
+    Initial implementation (-> old)
     """
-    # Get original unnormalized data
-    true_data = dataset.data  # (n_obs, 16) in original scale
+    # Feature groups (ascending/descending order)
+    g1 = [9, 7, 14, 11, 5]   # Ascending 
+    g2 = [0, 4, 13, 10, 8]   # Ascending 
+    g3 = [6, 15, 12]         # Descending
+    g4 = [2, 1, 3]           # Descending
+    groups = [g1, g3, g2, g4]
+    group_names = ['(a)', '(b)',
+                   '(c)', '(d)']
+
+    # Get data in original scale
+    true_data = dataset.data  # (n_obs, n_features)
     n_obs, n_features = true_data.shape
     lag_order = results.k_ar
-    feature_indices = dataset.feature_indices
-    
-    # Calculate residuals in normalized space
+
+    # Calculate residuals and error margins
     norm_residuals = results.resid  # (n_obs - lag_order, n_features)
-    
-    # Convert residuals to true scale
     true_residuals = norm_residuals * dataset.data_std
     abs_errors = np.abs(true_residuals)
-    error_margin = np.percentile(abs_errors, 100*confidence, axis=0)
-    
-    # Prepare figure
-    plt.figure(figsize=(16, 12))
-    
-    # Plot first 32 observations
-    plot_range = range(0, 32)
-    plot_data = true_data[plot_range]
-    
-    # Initialize predictions array (fill with NaNs for first 16)
-    preds = np.full((32, n_features), np.nan)
-    
-    # Make predictions only for 16-32
-    for t in range(16, 32):
-        if t >= lag_order:  # Ensure we have enough lags
-            # Forecast in normalized space
-            norm_pred = results.forecast(dataset.normalized_data[t-lag_order:t], steps=1)
-            # Convert prediction to true scale
+    error_margin = np.percentile(abs_errors, 100 * confidence, axis=0)
+
+    # Initialize predictions array (NaNs for first 16 steps)
+    preds = np.full((60, n_features), np.nan)
+    for t in range(8, 60):
+        if t >= lag_order:
+            norm_pred = results.forecast(dataset.normalized_data[t - lag_order:t], steps=1)
             true_pred = norm_pred * dataset.data_std + dataset.data_mean
             preds[t] = true_pred.squeeze()
-    
-    # Plot each feature
-    for i in range(n_features):
-        plt.subplot(4, 4, i+1)
-        
-        # Ground truth (true scale)
-        plt.plot(plot_range, plot_data[:, i], 'b-', label='Actual', linewidth=1, alpha=0.7)
-        
-        # Predictions (only show 16-32)
-        pred_times = range(16, 32)
-        valid_preds = preds[16:, i]
-        plt.plot(pred_times, valid_preds, 'r--', label='Predicted', linewidth=1.5, alpha=0.9)
-        
-        # Confidence intervals
-        plt.fill_between(
-            pred_times,
-            valid_preds - 2*error_margin[i],
-            valid_preds + 2*error_margin[i],
-            color='red', alpha=0.15
-        )
-        
-        # Vertical line showing prediction start
-        plt.axvline(x=16, color='gray', linestyle=':', alpha=0.5)
-        
-        # Formatting
-        plt.title(f'Feature {feature_indices[i]}', fontsize=9)
-        plt.xticks([0, 8, 16, 24, 32], fontsize=7)
-        
-        if i == 0:
-            plt.legend(fontsize=8, framealpha=0.5)
-    
-    plt.suptitle(f'VAR({lag_order}) Predictions with {int(confidence*100)}% Confidence Intervals', y=0.96)
-    # plt.tight_layout()
+
+    # Create 2x2 subplot grid
+    fig, axes = plt.subplots(2, 2, figsize=(16, 10))
+    axes = axes.flatten()
+    plot_range = range(0, 60)
+    pred_times = range(8, 60)
+
+    for ax, group, name in zip(axes, groups, group_names):
+        for i in group:
+            # Plot ground truth
+            ax.plot(plot_range, true_data[plot_range, i], 
+                    linewidth=1.5, alpha=1.0, label=f'f{i}')
+
+            # ax.scatter(plot_range, true_data[plot_range, i], 
+            #     s=16, label=f'f{i}')
+
+            # -- camilofs, Plot predictions (8-60)
+            valid_preds = preds[8:, i]
+            # ax.plot(pred_times, valid_preds, color='gray', ls='--', linewidth=1.5, alpha=0.4)
+ 
+            # Confidence intervals (shared per group)
+            ax.fill_between(
+                pred_times,
+                valid_preds - 2 * error_margin[i],
+                valid_preds + 2 * error_margin[i],
+                color='gray', alpha=0.24
+            )
+
+            ax.fill_between(
+                pred_times,
+                valid_preds - 3 * error_margin[i],
+                valid_preds + 3 * error_margin[i],
+                color='silver', alpha=0.32
+            )
+
+            if group in [g1, g2]:
+                ax.set_ylim(0.0, 0.8)
+                ax.legend(loc='lower right', ncol=2, fontsize=14)
+            else:
+                ax.set_ylim(0.6, 1.0)
+                ax.legend(loc='upper right', fontsize=14)
+
+        ax.set_xlim(0, 60)
+        ax.axvline(x=8, color='gray', linestyle=':', alpha=0.5)
+        ax.set_title(name, fontsize=24)
+        # ax.grid(True)
+
+    # plt.suptitle(f'VAR({lag_order}) Predictions ({int(confidence*100)} pct. CI)', y=0.98)
+    plt.tight_layout()
     plt.show()
-    
-    # Calculate metrics only for prediction period (16-32)
+    # plt.savefig('fig6_f70_varp.png', dpi=300)
+
+    # Calculate metrics (16-32 prediction period)
     pred_period_errors = []
-    for t in range(16, min(32, n_obs)):
+    for t in range(8, min(60, n_obs)):
         if not np.isnan(preds[t]).any():
-            error = true_data[t] - preds[t]
-            pred_period_errors.append(error)
-    
+            pred_period_errors.append(true_data[t] - preds[t])
+
     if pred_period_errors:
         pred_period_errors = np.array(pred_period_errors)
         mae = np.abs(pred_period_errors).mean(axis=0)
-        mse = (pred_period_errors**2).mean(axis=0)
-        
+        mse = (pred_period_errors ** 2).mean(axis=0)
+
         print("\nError Metrics (True Scale, Prediction Period Only):")
         print(f"{'Feature':<8}{'MAE':<12}{'MSE':<12}")
-        for i, idx in enumerate(feature_indices):
-            print(f"{idx:<8}{mae[i]:<12.4f}{mse[i]:<12.4f}")
-        
+        for i in range(n_features):
+            print(f"{i:<8}{mae[i]:<12.4f}{mse[i]:<12.4f}")
+
+        return {'mae': mae, 'mse': mse, 'error_margin': error_margin}
+    else:
+        print("No valid predictions in the 16-32 range")
+        return None
+
+
+def evaluate_statsmodels_var_epistemic_recursive(results, dataset, confidence=0.95):
+    """
+    Evaluate a VAR(p) model using recursive prediction (epistemic error propagation).
+    """
+
+    # Groupings for plotting
+    g1 = [9, 7, 14, 11, 5]
+    g2 = [0, 4, 13, 10, 8]
+    g3 = [6, 15, 12]
+    g4 = [2, 1, 3]
+    groups = [g1, g3, g2, g4]
+    group_names = ['(a)', '(b)', '(c)', '(d)']
+
+    # Data & params
+    true_data = dataset.data
+    true_data = true_data[:64]  # Ensure shape compatibility with predictions
+    n_obs, n_features = true_data.shape
+    lag_order = results.k_ar
+
+    preds = np.full((64, n_features), np.nan)
+    epistemic_errors = np.zeros((64, n_features))
+
+    # Aleatoric margin
+    true_residuals = results.resid * dataset.data_std
+    abs_errors = np.abs(true_residuals)
+    aleatoric_margin = np.percentile(abs_errors, 100 * confidence, axis=0)
+
+    # Bootstrap: insert first 8 real observations as prediction seed
+    preds[0:8] = true_data[0:8]
+
+    # Recursive prediction loop
+    for t in range(8, 64):
+        # Build the input window of lag_order frames
+        input_window = preds[t - lag_order:t]
+        norm_input = (input_window - dataset.data_mean) / dataset.data_std
+
+        # Forecast 1-step ahead
+        norm_pred = results.forecast(norm_input, steps=1)
+        true_pred = norm_pred * dataset.data_std + dataset.data_mean
+        preds[t] = true_pred.squeeze()
+
+        # Epistemic error: std of previous prediction errors
+        if t > 8:
+            past_errors = true_data[8:t] - preds[8:t]
+            epistemic_errors[t] = np.std(past_errors, axis=0)
+
+    # Compute dpa array
+    frame_range = np.arange(0, 64)
+    dpa_range = (frame_range * 2 * 200) / 686000
+    
+    pred_frames = np.arange(8, 64)
+    dpa_pred = (pred_frames * 2 * 200) / 686000
+    
+    # Plotting
+    fig, axes = plt.subplots(2, 2, figsize=(16, 10))
+    axes = axes.flatten()
+    
+    for ax, group, name in zip(axes, groups, group_names):
+        for i in group:
+            valid_preds = preds[:, i]
+    
+            z_95 = 1.96
+            z_99 = 2.576
+    
+            total_uncertainty_95 = np.sqrt(
+                (z_95 * aleatoric_margin[i])**2 + 
+                (z_95 * epistemic_errors[8:64, i])**2
+            )
+            total_uncertainty_99 = np.sqrt(
+                (z_99 * aleatoric_margin[i])**2 + 
+                (z_99 * epistemic_errors[8:64, i])**2
+            )
+    
+            # 95% confidence interval
+            ax.fill_between(
+                dpa_pred,
+                valid_preds[8:64] - total_uncertainty_95,
+                valid_preds[8:64] + total_uncertainty_95,
+                color='gray', alpha=0.3, edgecolor='none',
+            )
+    
+            # 99% confidence interval
+            ax.fill_between(
+                dpa_pred,
+                valid_preds[8:64] - total_uncertainty_99,
+                valid_preds[8:64] + total_uncertainty_99,
+                color='silver', alpha=0.4, edgecolor='none',
+            )
+    
+            # Plot true data
+            ax.plot(dpa_range, true_data[:, i], linewidth=1.5, alpha=1.0, label=f'f{i}')
+    
+            if group in [g1, g2]:
+                ax.set_ylim(0.0, 0.8)
+                ax.legend(loc='lower right', ncol=2, fontsize=10)
+            else:
+                ax.set_ylim(0.6, 1.0)
+                ax.legend(loc='upper right', fontsize=10)
+    
+        ax.set_xlim(0, 0.035)
+        ax.set_xticks([0.005, 0.01, 0.02, 0.03, 0.035])
+        ax.set_xticklabels(['0.005', '0.01', '0.02', '0.03', '0.035'])
+        ax.axvline(x=(8 * 2 * 200) / 686000, color='red', linestyle=':', alpha=0.5)
+        ax.set_title(name, fontsize=24)
+        ax.set_xlabel('Dose (dpa)', fontsize=14)
+    
+    plt.tight_layout()
+    plt.savefig('fig6b_f70_varp.png', dpi=300)
+
+    # Error metrics
+    
+    # -- camilofs (recalculate the total uncertainty -> shape: (52, n_features))
+    z_95 = 1.96
+    total_uncertainty_95 = np.sqrt(
+        (z_95 * aleatoric_margin[np.newaxis, :])**2 +
+        (z_95 * epistemic_errors[8:64])**2
+    )
+
+    pred_period_errors = true_data[8:64] - preds[8:64]
+    if not np.all(np.isnan(pred_period_errors)):
+        mae = np.nanmean(np.abs(pred_period_errors), axis=0)
+        mse = np.nanmean(pred_period_errors ** 2, axis=0)
+
+        print("\nError Metrics (8-64):")
+        print(f"{'Feature':<8}{'MAE':<12}{'MSE':<12}")
+        for i in range(n_features):
+            print(f"{i:<8}{mae[i]:<12.4f}{mse[i]:<12.4f}")
+
         return {
             'mae': mae,
             'mse': mse,
-            'error_margin': error_margin
+            'aleatoric_margin': aleatoric_margin,
+            'epistemic_errors': epistemic_errors[8:64],
+            'unc_95': total_uncertainty_95
         }
     else:
-        print("No valid predictions in the 16-32 range")
+        print("No valid predictions in range 8-64")
         return None
 
 
@@ -174,6 +339,137 @@ def force_fit(self, method='ols'):
     return model.fit(maxlags=self.p, method=method)
 
 
+def export_statsmodels_var(results, dataset, confidence=0.95):
+    """
+    Export recursive VAR predictions and total 99% uncertainty to a pandas DataFrame.
+    -- camilofs (this function should be generalized for any desired interval)
+    
+    Parameters:
+        results: Trained statsmodels VARResults object
+        dataset: An object with .data, .normalized_data, .data_mean, .data_std
+        confidence: Confidence level for uncertainty bands (default: 0.95)
+        
+    Returns:
+        pd.DataFrame with columns: ['frame', 'feature', 'prediction', 'total_uncertainty']
+        Only includes frames t > 8 (i.e. 8 to 59)
+    """
+    # Prepare data
+    true_data = dataset.data[:60]  # Limit to 60 frames
+    n_obs, n_features = true_data.shape
+    lag_order = results.k_ar
+
+    preds = np.full((60, n_features), np.nan)
+    epistemic_errors = np.zeros((60, n_features))
+
+    # Aleatoric error estimation
+    residuals = results.resid * dataset.data_std
+    abs_errors = np.abs(residuals)
+    aleatoric_margin = np.percentile(abs_errors, 100 * confidence, axis=0)  # (n_features,)
+
+    # Seed predictions with true values up to t=8
+    preds[:8] = true_data[:8]
+
+    # Recursive prediction loop
+    for t in range(8, 60):
+        input_window = preds[t - lag_order:t]
+        norm_input = (input_window - dataset.data_mean) / (dataset.data_std + 1e-8)
+
+        norm_pred = results.forecast(norm_input, steps=1)
+        true_pred = norm_pred * dataset.data_std + dataset.data_mean
+        preds[t] = true_pred.squeeze()
+
+        # Epistemic error from previous predictions
+        if t > 8:
+            past_errors = true_data[8:t] - preds[8:t]
+            epistemic_errors[t] = np.std(past_errors, axis=0)
+
+    # Z-score for desired confidence level (e.g., 2.576 for 99%)
+    from scipy.stats import norm
+    z_score = norm.ppf((1 + confidence) / 2)  # e.g., ≈2.576 for 99%
+
+    # Total uncertainty
+    total_uncertainty = np.sqrt(
+        (z_score * aleatoric_margin[np.newaxis, :])**2 +
+        (z_score * epistemic_errors[8:60])**2
+    )  # Shape: (52, n_features)
+
+    # Prepare DataFrame
+    data = []
+    for t in range(8, 60):  # t=8 to 59
+        for f in range(n_features):
+            data.append({
+                'frame': t,
+                'feature': f,
+                'prediction': preds[t, f],
+                'total_uncertainty': total_uncertainty[t - 8, f],
+                'true': true_data[t, f]
+            })
+
+    df = pd.DataFrame(data)
+    return df
+
+
+def predict_extended_range(results, dataset, confidence=0.95):
+    """
+    Extended range
+    """
+    # Prepare data
+    true_data = dataset.data[:151]  # Limit to 151 frames
+    n_obs, n_features = true_data.shape
+    lag_order = results.k_ar
+
+    # Initialize arrays for predictions and errors
+    preds = np.full((151, n_features), np.nan)
+    epistemic_errors = np.zeros((151, n_features))
+
+    # Aleatoric error estimation (same as before)
+    residuals = results.resid * dataset.data_std
+    abs_errors = np.abs(residuals)
+    aleatoric_margin = np.percentile(abs_errors, 100 * confidence, axis=0)  # (n_features,)
+
+    # Seed predictions with true values up to t=24 (new starting point)
+    preds[:24] = true_data[:24]
+
+    # Recursive prediction loop (now from 24 to 150)
+    for t in range(24, 151):
+        input_window = preds[t - lag_order:t]
+        norm_input = (input_window - dataset.data_mean) / (dataset.data_std + 1e-8)
+
+        norm_pred = results.forecast(norm_input, steps=1)
+        true_pred = norm_pred * dataset.data_std + dataset.data_mean
+        preds[t] = true_pred.squeeze()
+
+        # Epistemic error from previous predictions
+        if t > 24:
+            past_errors = true_data[24:t] - preds[24:t]
+            epistemic_errors[t] = np.std(past_errors, axis=0)
+
+    # Z-score for desired confidence level
+    from scipy.stats import norm
+    z_score = norm.ppf((1 + confidence) / 2)
+
+    # Total uncertainty (now covering 24 to 150)
+    total_uncertainty = np.sqrt(
+        (z_score * aleatoric_margin[np.newaxis, :])**2 +
+        (z_score * epistemic_errors[24:151])**2
+    )  # Shape: (127, n_features)
+
+    # Prepare DataFrame with new range
+    data = []
+    for t in range(24, 151):  # t=24 to 150
+        for f in range(n_features):
+            data.append({
+                'frame': t,
+                'feature': f,
+                'prediction': preds[t, f],
+                'total_uncertainty': total_uncertainty[t - 24, f],
+                'true': true_data[t, f]
+            })
+
+    df = pd.DataFrame(data)
+    return df
+
+
 # -- testing the framework
 # Deterministic runs
 seed = 169006142
@@ -181,35 +477,34 @@ torch.manual_seed(seed)
 torch.cuda.manual_seed(seed)
 
 # Configuration
-feature_indices = [7, 10, 11, 15, 17, 22, 27, 31, 34, 37, 40, 46, 49, 56, 57, 62]
-root_dir = 'data/datasets/dsf60_d9'
-target_folder = f'{root_dir}/r2targets/'
-p = 5  # Initial lag order guess
+root_dir = 'data/datasets/d567b'
+target_folder = f'{root_dir}/r3targets/'
+p = 4  # Initial lag order guess
 
 # Initialize dataset
 dataset = RobustVARDataset(target_folder=target_folder,
-                          feature_indices=feature_indices,
+                          desired_fname='70_',
                           p=p)
 
 # Try fitting
 results = dataset.fit_var_model()
 
-'''
-# If still failing, force OLS
-if not results:
-    print("Falling back to OLS estimation")
-    results = dataset.force_fit(method='ols')
+# Epistemic errors
+metrics = evaluate_statsmodels_var_epistemic_recursive(results, dataset)
+avg_unc_95 = np.mean(metrics['unc_95'], axis=0)  # shape (16,)
+avg_unc_95_original_scale = avg_unc_95 * dataset.data_std
+print(f"{'Feature':<8}{'Avg Unc. (95%)':<16}")
+for i, unc in enumerate(avg_unc_95_original_scale):
+    print(f"{i:<8}{unc*100:<16.5f} %")
 
-# Verify results
-if results:
-    print(results.summary())
-    print(f"\nActual lags used: {results.k_ar}")
-else:
-    print("Failed to fit model - need more data")
-'''
+# -- camilofs first range
+df_pred = export_statsmodels_var(results, dataset, confidence=0.95)
+print(df_pred.head())
+df_pred.to_csv('varp_pred_70.csv')
 
-# Evaluate and plot
-metrics = evaluate_statsmodels_var_first32(results, dataset, confidence=0.95)
+# -- camilofs extended range
+df_pred = predict_extended_range(results, dataset, confidence=0.95)
+print(df_pred.head())
+df_pred.to_csv('varp_pred_70b.csv')
 
-# To de-normalize any metric:
-# error_margin_original_scale = metrics['error_margin'] * dataset.data_std
+

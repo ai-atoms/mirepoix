@@ -13,17 +13,10 @@ import torchvision.transforms as T
 import pretrained_microscopy_models as pmm
 
 # Initialize ConvNeXt-Large model 
-# /home/camilofs/.cache/torch/hub/checkpoints/resnet50_pretrained_microscopynet_v1.1.pth.tar
-res50 = torch.hub.load('pytorch/vision:v0.10.0', 'resnet50', pretrained=False)
+res50 = torch.hub.load('pytorch/vision:v0.10.0', 'resnet50', pretrained=True)
 
 # Remove the final fully connected layer to get 2048-dim features
 res50.fc = nn.Identity()  # Removes the classifier
-
-# Load and filter state dict
-url = pmm.util.get_pretrained_microscopynet_url('resnet50', 'micronet')
-state_dict = torch.hub.load_state_dict_from_url(url, map_location=torch.device('cpu'))
-# filtered_state_dict ? 
-res50.load_state_dict(state_dict, strict=False)
 
 # Sanity check
 print(res50(torch.randn(1, 3, 224, 224)).shape)  # Should be [1, 2048]
@@ -36,8 +29,8 @@ transform = T.Compose([
 ])
 
 # Input and output directories
-input_dir = 'data/sample/abtem/'
-output_dir = os.path.join(os.path.dirname(os.path.dirname(input_dir)), 'img_descriptors/res50')
+input_dir = 'data/datasets/d567b/images'
+output_dir = os.path.join(os.path.dirname(input_dir), 'enc_images/res50_in')
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)

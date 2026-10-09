@@ -1,0 +1,98 @@
+[
+ {
+  "index": 2476,
+  "condition": "NOT (d6 <= 11.96)",
+  "amplitude": 0.291347,
+  "order": 1
+ },
+ {
+  "index": 4001,
+  "condition": "(d1 <= 219.77) NOR (d3 > 262.83)",
+  "amplitude": 0.185289,
+  "order": 2
+ },
+ {
+  "index": 5595,
+  "condition": "(d6 > 26.12) XNOR (d4 <= 303.32)",
+  "amplitude": 0.30856,
+  "order": 3
+ },
+ {
+  "index": 6102,
+  "condition": "(d1 >= 1154.58) OR (d6 < 21.56)",
+  "amplitude": 0.359714,
+  "order": 4
+ },
+ {
+  "index": 6142,
+  "condition": "(d4 < 545.78) XOR (d1b < 370.16)",
+  "amplitude": 0.21305,
+  "order": 5
+ },
+ {
+  "index": 6836,
+  "condition": "(d6 <= 19.35) XOR (d1b > 346.61)",
+  "amplitude": 0.250907,
+  "order": 6
+ },
+ {
+  "index": 6923,
+  "condition": "(d3 > 416.93) OR (d6 <= 32.75)",
+  "amplitude": 0.265503,
+  "order": 7
+ },
+ {
+  "index": 7103,
+  "condition": "NOT (d6 < 13.17)",
+  "amplitude": 0.341972,
+  "order": 8
+ },
+ {
+  "index": 7212,
+  "condition": "(d2 > 858.14) NOR (d6 < 43.45)",
+  "amplitude": 0.226325,
+  "order": 9
+ },
+ {
+  "index": 7888,
+  "condition": "(d6 > 11.44) AND (d4 < 926.33)",
+  "amplitude": 0.258571,
+  "order": 10
+ },
+ {
+  "index": 9877,
+  "condition": "(d1b >= 361.87) XOR (d4 >= 655.17)",
+  "amplitude": 0.193831,
+  "order": 11
+ },
+ {
+  "index": 11597,
+  "condition": "(d6 <= 21.99) XOR (d3 <= 538.75)",
+  "amplitude": 0.354907,
+  "order": 12
+ },
+ {
+  "index": 13945,
+  "condition": "(d6 > 22.48) XOR (d5 < 329.48)",
+  "amplitude": 0.349462,
+  "order": 13
+ },
+ {
+  "index": 14444,
+  "condition": "(d5 > 26.14) AND (d6 > 21.47)",
+  "amplitude": 0.356329,
+  "order": 14
+ },
+ {
+  "index": 14699,
+  "condition": "(d6 >= 19.11) XNOR (d6 <= 1265.68)",
+  "amplitude": 0.384685,
+  "order": 15
+ },
+ {
+  "index": 15216,
+  "condition": "(d1b >= 674.54) XNOR (d6 > 24.67)",
+  "amplitude": 0.323707,
+  "order": 16
+ }
+]

@@ -3,6 +3,7 @@ python3
 github.com @ camilofs
 '''
 
+import argparse
 import os
 from PIL import Image
 import numpy as np
@@ -22,39 +23,30 @@ convnext.classifier = nn.Sequential(
 convnext.eval()  # Set to eval mode
 
 # Sanity check
-print(convnext(torch.randn(1,3,384,384)).shape)  # Should be [1, 1536]
+print(convnext(torch.randn(1,3,224,224)).shape)  # Should be [1, 1536]
 
 
 # Define image transform
 transform = T.Compose([
-    T.Resize((384, 384)),
+    T.Resize((384, 384)), # or (224, 224)
     T.ToTensor(),
     T.Normalize(mean=[0.5], std=[0.5])
 ])
 
-# Input and output directories
-input_dir = 'data/datasets/d567b/images'
-output_dir = os.path.join(os.path.dirname(input_dir), 'enc_images/convnext_in')
+ap = argparse.ArgumentParser(description='Encode PNG images with ConvNeXt-Large (1536-d vector per image)')
+ap.add_argument('--input', default='data/fpa70a/images')
+ap.add_argument('--output', default='data/fpa70a/enc_images/convnext_in')
+ap.add_argument('--limit', type=int, help='only encode the first N images')
+args = ap.parse_args()
+os.makedirs(args.output, exist_ok=True)
 
-# Create output directory if it doesn't exist
-os.makedirs(output_dir, exist_ok=True)
-
-# Process all PNG images in the input directory
-for filename in os.listdir(input_dir):
-    if filename.endswith('.png'):
-        # Load and transform image
-        image_path = os.path.join(input_dir, filename)
-        image = Image.open(image_path).convert("RGB")
-        img_t = transform(image)
-        
-        # Get DINOv2 embedding
-        with torch.no_grad():
-            enc_img_t = convnext(img_t.unsqueeze(0)).detach().numpy()
-        
-        # Save embedding
-        output_path = os.path.join(output_dir, filename.replace('.png', '.npy'))
-        np.save(output_path, enc_img_t)
-        
-        print(f"Processed {filename}")
+filenames = sorted(f for f in os.listdir(args.input) if f.endswith('.png'))[:args.limit]
+for filename in filenames:
+    image = Image.open(os.path.join(args.input, filename)).convert("RGB")
+    img_t = transform(image)
+    with torch.no_grad():
+        enc_img_t = convnext(img_t.unsqueeze(0)).detach().numpy()
+    np.save(os.path.join(args.output, filename.replace('.png', '.npy')), enc_img_t)
+    print(f"Processed {filename}")
 
 print("All images processed successfully!")

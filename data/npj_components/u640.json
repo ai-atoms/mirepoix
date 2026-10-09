@@ -1,0 +1,2562 @@
+[
+ {
+  "index": 78,
+  "condition": "(d3 >= 356.08) XNOR (d1b >= 357.59)"
+ },
+ {
+  "index": 113,
+  "condition": "(d1 <= 233.20) OR (d2 >= 1182.97)"
+ },
+ {
+  "index": 164,
+  "condition": "(d1 >= 194.95) NOR (d1b >= 1324.34)"
+ },
+ {
+  "index": 194,
+  "condition": "NOT (d1 < 219.07)"
+ },
+ {
+  "index": 252,
+  "condition": "(d2 < 984.62) AND (d1 <= 215.52)"
+ },
+ {
+  "index": 282,
+  "condition": "(d4 < 594.59) XNOR (d1b > 343.81)"
+ },
+ {
+  "index": 285,
+  "condition": "(d1 > 208.11) OR (d1 > 1745.73)"
+ },
+ {
+  "index": 299,
+  "condition": "NOT (d6 > 7.75)"
+ },
+ {
+  "index": 302,
+  "condition": "(d2 > 297.78) XNOR (d4 < 718.64)"
+ },
+ {
+  "index": 314,
+  "condition": "(d5 <= 273.36) NAND (d6 >= 1029.62)"
+ },
+ {
+  "index": 389,
+  "condition": "(d4 <= 677.86) AND (d1 <= 607.67)"
+ },
+ {
+  "index": 398,
+  "condition": "(d4 < 672.04) AND (d4 < 1066.78)"
+ },
+ {
+  "index": 410,
+  "condition": "(d3 >= 430.58) XOR (d4 >= 749.08)"
+ },
+ {
+  "index": 484,
+  "condition": "(d1b < 393.22) XOR (d6 >= 1841.09)"
+ },
+ {
+  "index": 490,
+  "condition": "(d3 > 114.51) NOR (d5 >= 457.95)"
+ },
+ {
+  "index": 493,
+  "condition": "(d1b >= 409.63) XOR (d1 < 381.11)"
+ },
+ {
+  "index": 537,
+  "condition": "(d1b > 406.97) AND (d1 <= 1704.33)"
+ },
+ {
+  "index": 551,
+  "condition": "(d1 <= 994.88) NAND (d1 < 248.96)"
+ },
+ {
+  "index": 575,
+  "condition": "(d1b < 1514.65) XOR (d1 <= 334.12)"
+ },
+ {
+  "index": 622,
+  "condition": "(d2 >= 1959.54) OR (d6 >= 508.04)"
+ },
+ {
+  "index": 685,
+  "condition": "(d5 >= 382.99) NOR (d1 < 208.44)"
+ },
+ {
+  "index": 691,
+  "condition": "NOT (d4 <= 763.32)"
+ },
+ {
+  "index": 707,
+  "condition": "(d4 <= 691.46) NOR (d3 > 449.72)"
+ },
+ {
+  "index": 725,
+  "condition": "NOT (d1 > 238.36)"
+ },
+ {
+  "index": 744,
+  "condition": "(d1b > 346.75) NAND (d6 < 2821.83)"
+ },
+ {
+  "index": 748,
+  "condition": "(d1 < 1049.44) XOR (d6 >= 29.49)"
+ },
+ {
+  "index": 758,
+  "condition": "(d2 < 611.58) XOR (d1 <= 247.84)"
+ },
+ {
+  "index": 793,
+  "condition": "(d6 <= 18.38) XNOR (d4 >= 2361.20)"
+ },
+ {
+  "index": 805,
+  "condition": "NOT (d3 <= 112.46)"
+ },
+ {
+  "index": 807,
+  "condition": "(d3 >= 132.77) XOR (d3 < 116.11)"
+ },
+ {
+  "index": 883,
+  "condition": "(d1 >= 248.55) NOR (d5 >= 453.47)"
+ },
+ {
+  "index": 955,
+  "condition": "(d2 <= 1924.85) XNOR (d5 < 145.84)"
+ },
+ {
+  "index": 958,
+  "condition": "(d5 > 150.81) NAND (d1b < 818.23)"
+ },
+ {
+  "index": 981,
+  "condition": "(d4 > 686.86) XOR (d4 <= 1325.19)"
+ },
+ {
+  "index": 991,
+  "condition": "(d2 <= 1202.34) AND (d1b < 351.15)"
+ },
+ {
+  "index": 994,
+  "condition": "(d1b > 349.82) XNOR (d6 <= 1284.00)"
+ },
+ {
+  "index": 1006,
+  "condition": "(d1 >= 245.33) NOR (d3 >= 604.15)"
+ },
+ {
+  "index": 1023,
+  "condition": "(d5 >= 145.67) NAND (d2 <= 1503.19)"
+ },
+ {
+  "index": 1086,
+  "condition": "(d4 < 715.24) XNOR (d3 <= 367.52)"
+ },
+ {
+  "index": 1095,
+  "condition": "(d5 <= 248.12) XNOR (d2 >= 604.02)"
+ },
+ {
+  "index": 1097,
+  "condition": "(d3 <= 229.84) NAND (d3 < 120.33)"
+ },
+ {
+  "index": 1112,
+  "condition": "(d2 > 600.66) AND (d5 > 89.40)"
+ },
+ {
+  "index": 1117,
+  "condition": "(d6 <= 3016.77) XNOR (d4 > 696.36)"
+ },
+ {
+  "index": 1146,
+  "condition": "(d3 < 114.58) XNOR (d3 < 762.95)"
+ },
+ {
+  "index": 1158,
+  "condition": "(d3 < 613.97) XOR (d2 >= 533.67)"
+ },
+ {
+  "index": 1189,
+  "condition": "(d4 >= 2328.71) XOR (d5 < 160.50)"
+ },
+ {
+  "index": 1196,
+  "condition": "(d3 >= 437.20) OR (d1 < 192.05)"
+ },
+ {
+  "index": 1233,
+  "condition": "NOT (d1 < 220.03)"
+ },
+ {
+  "index": 1322,
+  "condition": "(d6 < 2196.44) NAND (d1 < 227.61)"
+ },
+ {
+  "index": 1352,
+  "condition": "(d6 > 2534.14) XOR (d4 < 726.08)"
+ },
+ {
+  "index": 1357,
+  "condition": "(d1b <= 356.77) NAND (d2 >= 75.39)"
+ },
+ {
+  "index": 1407,
+  "condition": "(d1b < 186.77) XOR (d1 >= 203.76)"
+ },
+ {
+  "index": 1495,
+  "condition": "NOT (d1 <= 232.56)"
+ },
+ {
+  "index": 1498,
+  "condition": "(d4 >= 691.57) XOR (d2 < 1063.20)"
+ },
+ {
+  "index": 1541,
+  "condition": "(d1b <= 234.49) NOR (d2 >= 533.38)"
+ },
+ {
+  "index": 1584,
+  "condition": "(d3 <= 300.89) NAND (d1b >= 1719.94)"
+ },
+ {
+  "index": 1638,
+  "condition": "(d4 >= 683.37) NAND (d2 >= 560.58)"
+ },
+ {
+  "index": 1693,
+  "condition": "(d1b <= 706.33) XNOR (d2 < 545.17)"
+ },
+ {
+  "index": 1704,
+  "condition": "(d1b > 1147.34) OR (d5 < 146.87)"
+ },
+ {
+  "index": 1715,
+  "condition": "(d6 > 639.61) NOR (d1b <= 343.78)"
+ },
+ {
+  "index": 1720,
+  "condition": "NOT (d5 >= 167.49)"
+ },
+ {
+  "index": 1725,
+  "condition": "(d4 >= 556.29) NOR (d6 >= 703.44)"
+ },
+ {
+  "index": 1736,
+  "condition": "(d5 <= 154.16) NAND (d6 < 1167.88)"
+ },
+ {
+  "index": 1770,
+  "condition": "(d2 > 1617.94) OR (d5 > 140.05)"
+ },
+ {
+  "index": 1793,
+  "condition": "(d1b >= 1032.72) XNOR (d1 < 246.43)"
+ },
+ {
+  "index": 1836,
+  "condition": "(d1b >= 361.10) XOR (d5 > 629.89)"
+ },
+ {
+  "index": 1853,
+  "condition": "(d1b < 449.67) XNOR (d4 > 690.05)"
+ },
+ {
+  "index": 1855,
+  "condition": "NOT (d1b < 399.98)"
+ },
+ {
+  "index": 1875,
+  "condition": "(d3 < 110.83) NAND (d1 <= 658.11)"
+ },
+ {
+  "index": 1910,
+  "condition": "(d4 >= 103.57) XOR (d5 > 163.63)"
+ },
+ {
+  "index": 1960,
+  "condition": "NOT (d4 <= 693.25)"
+ },
+ {
+  "index": 1970,
+  "condition": "(d4 >= 648.48) NOR (d3 > 370.94)"
+ },
+ {
+  "index": 2163,
+  "condition": "(d5 <= 167.86) OR (d2 <= 303.37)"
+ },
+ {
+  "index": 2178,
+  "condition": "(d1 >= 190.46) NAND (d2 <= 667.01)"
+ },
+ {
+  "index": 2204,
+  "condition": "(d5 <= 538.92) XNOR (d1 >= 194.73)"
+ },
+ {
+  "index": 2235,
+  "condition": "(d4 >= 715.63) NOR (d3 >= 500.06)"
+ },
+ {
+  "index": 2249,
+  "condition": "(d1 < 754.50) NAND (d3 > 110.17)"
+ },
+ {
+  "index": 2282,
+  "condition": "(d3 <= 222.58) AND (d6 >= 6.27)"
+ },
+ {
+  "index": 2292,
+  "condition": "(d2 > 606.27) NAND (d2 >= 284.49)"
+ },
+ {
+  "index": 2318,
+  "condition": "(d1b <= 353.13) XNOR (d1 < 790.50)"
+ },
+ {
+  "index": 2341,
+  "condition": "(d1 > 195.60) XOR (d6 > 499.61)"
+ },
+ {
+  "index": 2380,
+  "condition": "(d3 >= 110.75) OR (d2 >= 687.52)"
+ },
+ {
+  "index": 2409,
+  "condition": "(d6 > 794.62) XNOR (d4 > 665.71)"
+ },
+ {
+  "index": 2429,
+  "condition": "(d3 > 136.35) XOR (d4 >= 719.56)"
+ },
+ {
+  "index": 2468,
+  "condition": "(d1b <= 1363.96) AND (d2 < 543.95)"
+ },
+ {
+  "index": 2476,
+  "condition": "NOT (d6 <= 11.96)"
+ },
+ {
+  "index": 2519,
+  "condition": "(d3 > 688.98) AND (d6 <= 482.06)"
+ },
+ {
+  "index": 2541,
+  "condition": "(d3 > 114.53) AND (d3 < 593.78)"
+ },
+ {
+  "index": 2547,
+  "condition": "(d5 < 125.47) XNOR (d3 > 127.11)"
+ },
+ {
+  "index": 2550,
+  "condition": "(d1b >= 1131.81) XNOR (d5 > 148.60)"
+ },
+ {
+  "index": 2559,
+  "condition": "(d3 < 234.12) XNOR (d4 <= 659.68)"
+ },
+ {
+  "index": 2572,
+  "condition": "(d1 < 903.75) XNOR (d6 < 30.09)"
+ },
+ {
+  "index": 2638,
+  "condition": "(d2 <= 954.24) XOR (d2 < 531.69)"
+ },
+ {
+  "index": 2681,
+  "condition": "NOT (d1b <= 374.01)"
+ },
+ {
+  "index": 2682,
+  "condition": "(d1 >= 236.17) XNOR (d5 >= 73.26)"
+ },
+ {
+  "index": 2754,
+  "condition": "(d5 > 155.36) NOR (d6 > 2270.35)"
+ },
+ {
+  "index": 2770,
+  "condition": "(d1b > 1657.94) XOR (d3 >= 126.54)"
+ },
+ {
+  "index": 2778,
+  "condition": "(d3 < 640.78) XNOR (d3 < 113.96)"
+ },
+ {
+  "index": 2784,
+  "condition": "(d4 > 2381.72) NOR (d4 >= 700.86)"
+ },
+ {
+  "index": 2831,
+  "condition": "NOT (d1 >= 223.66)"
+ },
+ {
+  "index": 2837,
+  "condition": "(d5 >= 142.59) AND (d2 < 1281.81)"
+ },
+ {
+  "index": 2919,
+  "condition": "(d1b <= 1005.17) AND (d1b >= 400.08)"
+ },
+ {
+  "index": 2926,
+  "condition": "(d1b > 349.41) NAND (d3 <= 272.62)"
+ },
+ {
+  "index": 2933,
+  "condition": "(d2 <= 546.68) XOR (d1b >= 702.75)"
+ },
+ {
+  "index": 2984,
+  "condition": "(d1b >= 413.17) OR (d4 >= 916.62)"
+ },
+ {
+  "index": 3023,
+  "condition": "(d5 > 137.46) AND (d4 > 302.54)"
+ },
+ {
+  "index": 3024,
+  "condition": "(d1b <= 360.98) XOR (d4 <= 410.35)"
+ },
+ {
+  "index": 3027,
+  "condition": "NOT (d1 < 191.23)"
+ },
+ {
+  "index": 3047,
+  "condition": "(d1 <= 1774.12) AND (d1 <= 242.47)"
+ },
+ {
+  "index": 3053,
+  "condition": "(d5 <= 147.45) OR (d4 >= 1637.80)"
+ },
+ {
+  "index": 3056,
+  "condition": "(d1 >= 209.00) AND (d3 <= 210.06)"
+ },
+ {
+  "index": 3068,
+  "condition": "(d1b <= 1591.71) AND (d6 >= 24.60)"
+ },
+ {
+  "index": 3082,
+  "condition": "NOT (d4 <= 720.62)"
+ },
+ {
+  "index": 3102,
+  "condition": "(d1b > 119.27) NAND (d1b < 352.89)"
+ },
+ {
+  "index": 3126,
+  "condition": "(d1b < 392.80) XOR (d2 >= 482.34)"
+ },
+ {
+  "index": 3187,
+  "condition": "(d1 >= 243.74) NAND (d3 < 297.32)"
+ },
+ {
+  "index": 3206,
+  "condition": "NOT (d2 >= 609.60)"
+ },
+ {
+  "index": 3225,
+  "condition": "(d4 < 913.06) XOR (d1 <= 227.95)"
+ },
+ {
+  "index": 3257,
+  "condition": "(d1b <= 201.20) NAND (d4 < 2303.54)"
+ },
+ {
+  "index": 3277,
+  "condition": "(d1 <= 198.02) AND (d1b < 408.96)"
+ },
+ {
+  "index": 3307,
+  "condition": "(d4 >= 141.03) AND (d3 < 111.44)"
+ },
+ {
+  "index": 3330,
+  "condition": "(d1 >= 188.89) XOR (d4 <= 2379.59)"
+ },
+ {
+  "index": 3333,
+  "condition": "(d1b >= 1206.37) OR (d2 > 1418.92)"
+ },
+ {
+  "index": 3360,
+  "condition": "(d3 <= 562.76) NAND (d3 > 115.68)"
+ },
+ {
+  "index": 3369,
+  "condition": "(d3 <= 22.56) XNOR (d2 > 602.69)"
+ },
+ {
+  "index": 3374,
+  "condition": "NOT (d1b < 358.83)"
+ },
+ {
+  "index": 3405,
+  "condition": "(d4 <= 652.75) XNOR (d1b < 212.23)"
+ },
+ {
+  "index": 3420,
+  "condition": "(d5 <= 149.01) XOR (d6 > 351.88)"
+ },
+ {
+  "index": 3439,
+  "condition": "(d5 > 307.29) XNOR (d2 <= 605.60)"
+ },
+ {
+  "index": 3446,
+  "condition": "(d3 < 331.00) XOR (d6 >= 7.28)"
+ },
+ {
+  "index": 3453,
+  "condition": "(d5 > 168.62) AND (d4 >= 285.86)"
+ },
+ {
+  "index": 3486,
+  "condition": "(d6 >= 1850.10) XNOR (d1b > 381.64)"
+ },
+ {
+  "index": 3535,
+  "condition": "(d3 >= 114.76) XOR (d3 >= 673.66)"
+ },
+ {
+  "index": 3538,
+  "condition": "(d5 > 566.34) OR (d1b > 353.89)"
+ },
+ {
+  "index": 3545,
+  "condition": "(d5 < 59.37) XNOR (d1 > 217.57)"
+ },
+ {
+  "index": 3552,
+  "condition": "(d2 >= 1207.56) OR (d4 < 726.51)"
+ },
+ {
+  "index": 3568,
+  "condition": "(d1 < 1841.62) NOR (d1 >= 1363.72)"
+ },
+ {
+  "index": 3573,
+  "condition": "(d4 <= 881.17) XNOR (d1b > 400.73)"
+ },
+ {
+  "index": 3582,
+  "condition": "(d4 >= 700.44) XNOR (d5 >= 119.51)"
+ },
+ {
+  "index": 3612,
+  "condition": "(d2 <= 1942.44) XNOR (d1b <= 391.30)"
+ },
+ {
+  "index": 3623,
+  "condition": "(d1b > 396.19) XNOR (d1 > 1596.74)"
+ },
+ {
+  "index": 3631,
+  "condition": "(d5 >= 205.85) XNOR (d3 > 115.19)"
+ },
+ {
+  "index": 3640,
+  "condition": "(d6 > 2530.51) NOR (d1b > 353.17)"
+ },
+ {
+  "index": 3700,
+  "condition": "(d1b > 1478.01) NAND (d1 < 524.13)"
+ },
+ {
+  "index": 3724,
+  "condition": "(d4 <= 941.19) XNOR (d6 >= 1267.22)"
+ },
+ {
+  "index": 3804,
+  "condition": "NOT (d5 > 159.82)"
+ },
+ {
+  "index": 3808,
+  "condition": "(d3 < 152.36) AND (d5 <= 140.84)"
+ },
+ {
+  "index": 3810,
+  "condition": "(d5 >= 38.17) OR (d1 > 1815.15)"
+ },
+ {
+  "index": 3825,
+  "condition": "(d2 <= 574.07) OR (d4 >= 738.95)"
+ },
+ {
+  "index": 3835,
+  "condition": "(d5 >= 153.65) NOR (d4 >= 1124.41)"
+ },
+ {
+  "index": 3874,
+  "condition": "(d6 < 3084.72) XNOR (d5 >= 143.14)"
+ },
+ {
+  "index": 3883,
+  "condition": "(d4 >= 682.44) XNOR (d6 <= 2541.70)"
+ },
+ {
+  "index": 3890,
+  "condition": "(d1 >= 233.11) XOR (d3 > 576.82)"
+ },
+ {
+  "index": 3891,
+  "condition": "NOT (d2 > 527.75)"
+ },
+ {
+  "index": 3907,
+  "condition": "(d4 >= 199.61) AND (d2 <= 533.45)"
+ },
+ {
+  "index": 3932,
+  "condition": "(d2 > 563.35) XOR (d4 > 1451.71)"
+ },
+ {
+  "index": 3944,
+  "condition": "(d5 > 159.50) AND (d1b <= 721.21)"
+ },
+ {
+  "index": 3986,
+  "condition": "(d1b < 353.32) XNOR (d4 >= 372.81)"
+ },
+ {
+  "index": 3991,
+  "condition": "(d1 > 230.78) XOR (d4 <= 1363.48)"
+ },
+ {
+  "index": 4001,
+  "condition": "(d1 <= 219.77) NOR (d3 > 262.83)"
+ },
+ {
+  "index": 4006,
+  "condition": "(d1b >= 351.72) NAND (d3 <= 504.46)"
+ },
+ {
+  "index": 4107,
+  "condition": "(d1b > 384.00) NAND (d4 < 983.39)"
+ },
+ {
+  "index": 4119,
+  "condition": "(d1b >= 350.28) NOR (d3 > 664.41)"
+ },
+ {
+  "index": 4124,
+  "condition": "(d1 >= 188.31) XOR (d2 > 1655.22)"
+ },
+ {
+  "index": 4139,
+  "condition": "NOT (d4 < 297.52)"
+ },
+ {
+  "index": 4216,
+  "condition": "(d1b < 404.16) NOR (d5 >= 720.38)"
+ },
+ {
+  "index": 4236,
+  "condition": "(d1b < 39.17) XNOR (d4 >= 677.58)"
+ },
+ {
+  "index": 4352,
+  "condition": "(d5 < 164.63) XNOR (d5 >= 764.38)"
+ },
+ {
+  "index": 4361,
+  "condition": "(d1b < 343.58) XNOR (d1b > 246.75)"
+ },
+ {
+  "index": 4490,
+  "condition": "NOT (d3 > 124.07)"
+ },
+ {
+  "index": 4523,
+  "condition": "(d5 > 153.94) OR (d5 > 255.41)"
+ },
+ {
+  "index": 4535,
+  "condition": "(d6 >= 1805.74) OR (d3 <= 15.52)"
+ },
+ {
+  "index": 4541,
+  "condition": "(d3 > 82.44) AND (d5 >= 160.00)"
+ },
+ {
+  "index": 4581,
+  "condition": "(d6 > 1785.89) OR (d4 >= 748.37)"
+ },
+ {
+  "index": 4643,
+  "condition": "(d1 <= 197.64) XNOR (d5 > 620.76)"
+ },
+ {
+  "index": 4662,
+  "condition": "NOT (d1b <= 1754.64)"
+ },
+ {
+  "index": 4674,
+  "condition": "(d4 <= 682.04) NAND (d1b <= 656.67)"
+ },
+ {
+  "index": 4736,
+  "condition": "(d3 <= 35.87) XOR (d1b >= 416.53)"
+ },
+ {
+  "index": 4744,
+  "condition": "(d1b >= 358.09) OR (d2 > 762.25)"
+ },
+ {
+  "index": 4747,
+  "condition": "(d1 <= 205.52) XOR (d4 < 2711.63)"
+ },
+ {
+  "index": 4749,
+  "condition": "(d1b <= 1443.40) NAND (d4 > 707.38)"
+ },
+ {
+  "index": 4780,
+  "condition": "(d1b <= 1858.18) NAND (d2 < 520.52)"
+ },
+ {
+  "index": 4808,
+  "condition": "(d1b >= 76.23) NAND (d1b >= 374.51)"
+ },
+ {
+  "index": 4823,
+  "condition": "(d5 > 155.74) XOR (d6 > 1102.57)"
+ },
+ {
+  "index": 4827,
+  "condition": "(d4 <= 683.59) OR (d4 >= 1438.76)"
+ },
+ {
+  "index": 4869,
+  "condition": "(d1 < 239.36) NOR (d3 > 627.69)"
+ },
+ {
+  "index": 4879,
+  "condition": "(d1 <= 370.36) NAND (d1b >= 366.79)"
+ },
+ {
+  "index": 4916,
+  "condition": "(d5 <= 175.91) XNOR (d3 > 442.87)"
+ },
+ {
+  "index": 4963,
+  "condition": "(d4 <= 2771.86) XNOR (d2 >= 602.07)"
+ },
+ {
+  "index": 4979,
+  "condition": "(d1b < 380.36) NOR (d4 >= 2280.46)"
+ },
+ {
+  "index": 4983,
+  "condition": "(d2 <= 1780.34) AND (d1b < 370.36)"
+ },
+ {
+  "index": 5042,
+  "condition": "(d5 >= 142.19) AND (d4 <= 725.50)"
+ },
+ {
+  "index": 5043,
+  "condition": "(d3 <= 236.63) NAND (d1 < 240.01)"
+ },
+ {
+  "index": 5044,
+  "condition": "(d5 >= 638.78) OR (d4 < 712.19)"
+ },
+ {
+  "index": 5057,
+  "condition": "(d1b <= 1311.75) AND (d6 <= 32.04)"
+ },
+ {
+  "index": 5100,
+  "condition": "(d1 < 128.52) OR (d3 >= 96.03)"
+ },
+ {
+  "index": 5118,
+  "condition": "(d5 < 664.59) XNOR (d4 >= 662.29)"
+ },
+ {
+  "index": 5123,
+  "condition": "NOT (d3 <= 124.63)"
+ },
+ {
+  "index": 5132,
+  "condition": "(d4 >= 984.56) OR (d6 >= 597.24)"
+ },
+ {
+  "index": 5141,
+  "condition": "(d1b >= 397.69) OR (d1b >= 1283.70)"
+ },
+ {
+  "index": 5202,
+  "condition": "(d2 <= 571.14) NAND (d2 <= 1515.62)"
+ },
+ {
+  "index": 5234,
+  "condition": "(d3 >= 17.82) NAND (d6 < 431.72)"
+ },
+ {
+  "index": 5265,
+  "condition": "(d3 >= 656.39) NOR (d1b >= 376.21)"
+ },
+ {
+  "index": 5312,
+  "condition": "(d6 > 59.28) XNOR (d6 >= 373.68)"
+ },
+ {
+  "index": 5326,
+  "condition": "(d1b <= 1803.24) NAND (d1 < 207.40)"
+ },
+ {
+  "index": 5376,
+  "condition": "(d5 < 369.54) XOR (d3 >= 156.17)"
+ },
+ {
+  "index": 5381,
+  "condition": "(d3 < 751.69) NAND (d1 < 1121.64)"
+ },
+ {
+  "index": 5428,
+  "condition": "(d4 < 2563.79) XOR (d1 > 235.66)"
+ },
+ {
+  "index": 5477,
+  "condition": "(d5 > 400.72) NAND (d4 >= 1485.39)"
+ },
+ {
+  "index": 5516,
+  "condition": "(d1 <= 983.67) AND (d1b < 405.84)"
+ },
+ {
+  "index": 5517,
+  "condition": "(d3 > 645.48) XNOR (d1b < 369.13)"
+ },
+ {
+  "index": 5570,
+  "condition": "(d5 <= 165.64) XNOR (d2 <= 573.32)"
+ },
+ {
+  "index": 5571,
+  "condition": "NOT (d1 <= 233.17)"
+ },
+ {
+  "index": 5595,
+  "condition": "(d6 > 26.12) XNOR (d4 <= 303.32)"
+ },
+ {
+  "index": 5685,
+  "condition": "(d2 <= 520.14) XNOR (d5 <= 416.26)"
+ },
+ {
+  "index": 5708,
+  "condition": "NOT (d3 >= 99.85)"
+ },
+ {
+  "index": 5767,
+  "condition": "(d3 >= 121.77) XOR (d4 >= 375.42)"
+ },
+ {
+  "index": 5778,
+  "condition": "(d2 > 538.16) OR (d3 > 176.91)"
+ },
+ {
+  "index": 5837,
+  "condition": "(d2 < 1856.34) XNOR (d3 < 112.69)"
+ },
+ {
+  "index": 5880,
+  "condition": "(d3 >= 61.05) XOR (d4 > 618.23)"
+ },
+ {
+  "index": 5898,
+  "condition": "NOT (d1b <= 385.28)"
+ },
+ {
+  "index": 5932,
+  "condition": "(d1b <= 152.48) NOR (d2 > 584.81)"
+ },
+ {
+  "index": 5963,
+  "condition": "(d5 > 155.17) XOR (d2 >= 738.22)"
+ },
+ {
+  "index": 5979,
+  "condition": "(d1b < 411.36) NOR (d2 > 1845.61)"
+ },
+ {
+  "index": 5988,
+  "condition": "(d5 < 529.52) NAND (d2 < 576.01)"
+ },
+ {
+  "index": 6038,
+  "condition": "(d3 < 113.56) XOR (d4 <= 103.91)"
+ },
+ {
+  "index": 6049,
+  "condition": "NOT (d3 <= 118.00)"
+ },
+ {
+  "index": 6053,
+  "condition": "(d4 > 712.15) XOR (d1 < 1245.65)"
+ },
+ {
+  "index": 6079,
+  "condition": "(d3 > 285.32) NOR (d2 > 541.61)"
+ },
+ {
+  "index": 6102,
+  "condition": "(d1 >= 1154.58) OR (d6 < 21.56)"
+ },
+ {
+  "index": 6109,
+  "condition": "(d5 <= 502.03) OR (d1 < 1404.75)"
+ },
+ {
+  "index": 6142,
+  "condition": "(d4 < 545.78) XOR (d1b < 370.16)"
+ },
+ {
+  "index": 6161,
+  "condition": "NOT (d5 > 341.80)"
+ },
+ {
+  "index": 6164,
+  "condition": "(d3 <= 164.03) NAND (d5 > 156.01)"
+ },
+ {
+  "index": 6181,
+  "condition": "(d6 > 24.23) NAND (d6 <= 1021.64)"
+ },
+ {
+  "index": 6190,
+  "condition": "(d5 >= 144.63) NAND (d4 < 938.04)"
+ },
+ {
+  "index": 6201,
+  "condition": "(d4 <= 2778.25) OR (d4 <= 1929.84)"
+ },
+ {
+  "index": 6237,
+  "condition": "NOT (d1b > 407.42)"
+ },
+ {
+  "index": 6241,
+  "condition": "(d4 > 978.53) NOR (d2 <= 544.43)"
+ },
+ {
+  "index": 6270,
+  "condition": "(d2 < 1288.25) AND (d1 > 249.88)"
+ },
+ {
+  "index": 6283,
+  "condition": "(d2 > 562.35) NAND (d6 < 1285.63)"
+ },
+ {
+  "index": 6302,
+  "condition": "NOT (d2 >= 562.58)"
+ },
+ {
+  "index": 6344,
+  "condition": "(d6 >= 1656.83) XOR (d5 >= 150.74)"
+ },
+ {
+  "index": 6357,
+  "condition": "(d4 < 2187.78) NAND (d2 >= 257.56)"
+ },
+ {
+  "index": 6361,
+  "condition": "(d4 > 2770.18) NAND (d5 >= 691.59)"
+ },
+ {
+  "index": 6367,
+  "condition": "(d1 > 278.67) NAND (d3 <= 766.24)"
+ },
+ {
+  "index": 6375,
+  "condition": "(d4 <= 689.18) NAND (d2 <= 898.88)"
+ },
+ {
+  "index": 6400,
+  "condition": "(d4 <= 728.02) NAND (d2 > 176.94)"
+ },
+ {
+  "index": 6401,
+  "condition": "(d1b < 1852.74) XOR (d1 > 1678.96)"
+ },
+ {
+  "index": 6411,
+  "condition": "(d4 <= 646.46) XOR (d2 >= 5.70)"
+ },
+ {
+  "index": 6415,
+  "condition": "(d2 < 539.20) XOR (d4 > 2678.47)"
+ },
+ {
+  "index": 6434,
+  "condition": "(d3 > 108.76) NAND (d5 >= 86.66)"
+ },
+ {
+  "index": 6453,
+  "condition": "(d3 >= 121.00) AND (d2 > 511.05)"
+ },
+ {
+  "index": 6470,
+  "condition": "(d4 >= 689.15) OR (d5 > 620.03)"
+ },
+ {
+  "index": 6492,
+  "condition": "NOT (d2 <= 547.52)"
+ },
+ {
+  "index": 6511,
+  "condition": "(d2 < 606.54) OR (d2 <= 63.11)"
+ },
+ {
+  "index": 6534,
+  "condition": "(d1 < 240.08) XOR (d3 <= 545.23)"
+ },
+ {
+  "index": 6547,
+  "condition": "(d5 > 642.88) XOR (d2 < 1748.54)"
+ },
+ {
+  "index": 6579,
+  "condition": "(d1b > 365.10) OR (d1b > 1089.52)"
+ },
+ {
+  "index": 6586,
+  "condition": "(d2 <= 1765.69) NAND (d2 >= 533.54)"
+ },
+ {
+  "index": 6620,
+  "condition": "(d3 < 122.76) XOR (d2 < 68.37)"
+ },
+ {
+  "index": 6627,
+  "condition": "(d1b > 186.11) OR (d3 > 336.74)"
+ },
+ {
+  "index": 6628,
+  "condition": "(d1 <= 207.50) XOR (d2 <= 1034.65)"
+ },
+ {
+  "index": 6686,
+  "condition": "NOT (d1 < 231.13)"
+ },
+ {
+  "index": 6703,
+  "condition": "(d3 >= 452.62) XOR (d2 > 585.99)"
+ },
+ {
+  "index": 6711,
+  "condition": "(d4 >= 694.18) XNOR (d3 >= 688.14)"
+ },
+ {
+  "index": 6714,
+  "condition": "(d1b > 1691.68) XNOR (d4 <= 671.61)"
+ },
+ {
+  "index": 6732,
+  "condition": "(d1 > 323.03) NOR (d1 >= 191.14)"
+ },
+ {
+  "index": 6733,
+  "condition": "(d1b >= 446.85) XOR (d3 > 122.55)"
+ },
+ {
+  "index": 6759,
+  "condition": "(d2 < 842.54) NAND (d5 >= 167.00)"
+ },
+ {
+  "index": 6780,
+  "condition": "NOT (d3 <= 119.92)"
+ },
+ {
+  "index": 6791,
+  "condition": "(d3 > 656.53) XNOR (d4 <= 751.46)"
+ },
+ {
+  "index": 6805,
+  "condition": "(d5 >= 358.09) OR (d6 <= 23.68)"
+ },
+ {
+  "index": 6828,
+  "condition": "(d1b > 407.30) XNOR (d3 <= 751.57)"
+ },
+ {
+  "index": 6834,
+  "condition": "NOT (d2 > 577.40)"
+ },
+ {
+  "index": 6836,
+  "condition": "(d6 <= 19.35) XOR (d1b > 346.61)"
+ },
+ {
+  "index": 6848,
+  "condition": "NOT (d4 >= 1454.57)"
+ },
+ {
+  "index": 6864,
+  "condition": "NOT (d3 >= 120.42)"
+ },
+ {
+  "index": 6881,
+  "condition": "(d5 < 137.79) XNOR (d1 < 235.36)"
+ },
+ {
+  "index": 6883,
+  "condition": "(d3 <= 233.31) AND (d1 >= 618.01)"
+ },
+ {
+  "index": 6887,
+  "condition": "(d1 <= 254.55) NAND (d6 < 417.65)"
+ },
+ {
+  "index": 6892,
+  "condition": "(d5 > 155.86) OR (d5 >= 310.85)"
+ },
+ {
+  "index": 6916,
+  "condition": "NOT (d4 <= 711.75)"
+ },
+ {
+  "index": 6923,
+  "condition": "(d3 > 416.93) OR (d6 <= 32.75)"
+ },
+ {
+  "index": 6933,
+  "condition": "(d5 > 749.65) XOR (d3 > 122.79)"
+ },
+ {
+  "index": 6975,
+  "condition": "(d1b >= 382.83) AND (d5 <= 153.43)"
+ },
+ {
+  "index": 6977,
+  "condition": "(d2 <= 406.30) XOR (d3 >= 98.83)"
+ },
+ {
+  "index": 6989,
+  "condition": "NOT (d4 < 748.02)"
+ },
+ {
+  "index": 7014,
+  "condition": "(d6 > 1537.44) XNOR (d1b >= 385.97)"
+ },
+ {
+  "index": 7025,
+  "condition": "(d4 <= 707.13) NAND (d2 > 476.71)"
+ },
+ {
+  "index": 7037,
+  "condition": "(d3 > 592.27) OR (d4 > 143.89)"
+ },
+ {
+  "index": 7050,
+  "condition": "NOT (d5 >= 153.37)"
+ },
+ {
+  "index": 7067,
+  "condition": "NOT (d2 <= 540.45)"
+ },
+ {
+  "index": 7103,
+  "condition": "NOT (d6 < 13.17)"
+ },
+ {
+  "index": 7140,
+  "condition": "(d3 < 5.06) OR (d4 <= 659.12)"
+ },
+ {
+  "index": 7159,
+  "condition": "(d5 > 165.08) XOR (d6 < 139.79)"
+ },
+ {
+  "index": 7165,
+  "condition": "NOT (d3 <= 257.50)"
+ },
+ {
+  "index": 7166,
+  "condition": "(d1b >= 1290.51) NAND (d1 < 1179.26)"
+ },
+ {
+  "index": 7212,
+  "condition": "(d2 > 858.14) NOR (d6 < 43.45)"
+ },
+ {
+  "index": 7232,
+  "condition": "NOT (d1b <= 358.07)"
+ },
+ {
+  "index": 7267,
+  "condition": "(d1b < 394.57) XNOR (d3 >= 375.11)"
+ },
+ {
+  "index": 7302,
+  "condition": "(d5 > 153.09) OR (d6 >= 783.60)"
+ },
+ {
+  "index": 7339,
+  "condition": "(d6 < 1886.36) AND (d6 > 1964.18)"
+ },
+ {
+  "index": 7350,
+  "condition": "NOT (d3 > 116.47)"
+ },
+ {
+  "index": 7365,
+  "condition": "(d3 > 555.52) XNOR (d1b <= 403.79)"
+ },
+ {
+  "index": 7396,
+  "condition": "(d3 < 133.40) XNOR (d4 < 705.92)"
+ },
+ {
+  "index": 7408,
+  "condition": "(d1b >= 353.05) XOR (d2 >= 1190.02)"
+ },
+ {
+  "index": 7416,
+  "condition": "(d5 <= 416.62) NAND (d5 > 165.97)"
+ },
+ {
+  "index": 7450,
+  "condition": "(d4 <= 1529.20) NAND (d1 < 243.69)"
+ },
+ {
+  "index": 7465,
+  "condition": "(d3 > 126.79) NOR (d1 >= 712.84)"
+ },
+ {
+  "index": 7509,
+  "condition": "(d4 <= 2108.21) XNOR (d5 <= 157.36)"
+ },
+ {
+  "index": 7518,
+  "condition": "(d1b > 388.91) OR (d4 > 1534.65)"
+ },
+ {
+  "index": 7577,
+  "condition": "(d3 <= 116.98) AND (d4 <= 1462.00)"
+ },
+ {
+  "index": 7619,
+  "condition": "(d3 > 596.26) NOR (d1b <= 391.74)"
+ },
+ {
+  "index": 7631,
+  "condition": "(d4 <= 2435.01) NAND (d4 < 723.67)"
+ },
+ {
+  "index": 7656,
+  "condition": "(d1 > 188.12) NAND (d3 < 393.68)"
+ },
+ {
+  "index": 7665,
+  "condition": "(d5 >= 415.28) OR (d1 < 192.80)"
+ },
+ {
+  "index": 7691,
+  "condition": "(d3 >= 275.64) OR (d1b > 352.18)"
+ },
+ {
+  "index": 7723,
+  "condition": "(d2 > 519.51) NOR (d5 >= 347.08)"
+ },
+ {
+  "index": 7749,
+  "condition": "(d5 >= 127.17) XNOR (d4 >= 2147.26)"
+ },
+ {
+  "index": 7765,
+  "condition": "(d4 <= 2634.06) AND (d2 >= 569.73)"
+ },
+ {
+  "index": 7798,
+  "condition": "(d1b < 348.91) XOR (d6 > 2684.68)"
+ },
+ {
+  "index": 7815,
+  "condition": "(d4 <= 672.08) XOR (d2 < 94.14)"
+ },
+ {
+  "index": 7818,
+  "condition": "(d1b < 404.74) NAND (d6 < 2237.93)"
+ },
+ {
+  "index": 7829,
+  "condition": "(d2 <= 522.20) NAND (d2 <= 1353.14)"
+ },
+ {
+  "index": 7870,
+  "condition": "(d4 < 688.28) XOR (d2 > 47.31)"
+ },
+ {
+  "index": 7888,
+  "condition": "(d6 > 11.44) AND (d4 < 926.33)"
+ },
+ {
+  "index": 7917,
+  "condition": "(d4 >= 1805.23) XNOR (d6 > 2305.97)"
+ },
+ {
+  "index": 7932,
+  "condition": "(d2 <= 1733.97) NOR (d1b > 1252.55)"
+ },
+ {
+  "index": 7964,
+  "condition": "(d1 >= 198.37) XNOR (d6 <= 760.32)"
+ },
+ {
+  "index": 7990,
+  "condition": "(d2 < 526.04) XNOR (d6 < 200.64)"
+ },
+ {
+  "index": 8092,
+  "condition": "(d5 >= 153.24) XOR (d1 <= 546.89)"
+ },
+ {
+  "index": 8103,
+  "condition": "(d4 > 2116.35) AND (d1b >= 1280.85)"
+ },
+ {
+  "index": 8192,
+  "condition": "(d2 < 1766.98) NAND (d1 <= 234.04)"
+ },
+ {
+  "index": 8193,
+  "condition": "(d4 < 665.93) XOR (d1 > 1691.38)"
+ },
+ {
+  "index": 8251,
+  "condition": "(d1b <= 353.91) AND (d5 <= 687.70)"
+ },
+ {
+  "index": 8259,
+  "condition": "(d4 > 699.75) XNOR (d1b >= 354.36)"
+ },
+ {
+  "index": 8328,
+  "condition": "(d1b >= 1655.12) XOR (d2 > 549.88)"
+ },
+ {
+  "index": 8371,
+  "condition": "(d6 > 700.02) XNOR (d1 > 238.41)"
+ },
+ {
+  "index": 8393,
+  "condition": "(d5 <= 333.58) NAND (d2 > 574.84)"
+ },
+ {
+  "index": 8401,
+  "condition": "NOT (d3 > 115.46)"
+ },
+ {
+  "index": 8466,
+  "condition": "(d4 > 703.43) OR (d4 > 2104.22)"
+ },
+ {
+  "index": 8485,
+  "condition": "(d5 > 504.67) XOR (d4 > 680.52)"
+ },
+ {
+  "index": 8502,
+  "condition": "(d6 < 3147.17) NAND (d3 >= 119.57)"
+ },
+ {
+  "index": 8523,
+  "condition": "(d6 >= 1724.87) OR (d2 <= 540.77)"
+ },
+ {
+  "index": 8553,
+  "condition": "(d6 < 3348.52) XOR (d4 <= 679.63)"
+ },
+ {
+  "index": 8558,
+  "condition": "(d5 >= 140.68) XNOR (d5 < 199.65)"
+ },
+ {
+  "index": 8603,
+  "condition": "(d1 <= 1838.21) XOR (d3 < 114.96)"
+ },
+ {
+  "index": 8670,
+  "condition": "(d1 > 243.71) NAND (d3 < 138.90)"
+ },
+ {
+  "index": 8696,
+  "condition": "(d2 < 1748.11) AND (d5 >= 156.01)"
+ },
+ {
+  "index": 8699,
+  "condition": "(d6 >= 8.59) NOR (d3 <= 30.45)"
+ },
+ {
+  "index": 8706,
+  "condition": "(d4 < 683.33) XNOR (d6 < 387.29)"
+ },
+ {
+  "index": 8724,
+  "condition": "(d1b >= 393.04) XNOR (d2 >= 862.94)"
+ },
+ {
+  "index": 8731,
+  "condition": "NOT (d1 < 223.51)"
+ },
+ {
+  "index": 8773,
+  "condition": "(d1b > 332.88) AND (d3 >= 118.26)"
+ },
+ {
+  "index": 8792,
+  "condition": "NOT (d6 > 25.40)"
+ },
+ {
+  "index": 8798,
+  "condition": "(d6 <= 3156.68) XNOR (d1b > 396.23)"
+ },
+ {
+  "index": 8803,
+  "condition": "(d2 > 566.52) XNOR (d1 > 468.78)"
+ },
+ {
+  "index": 8818,
+  "condition": "(d6 > 55.95) OR (d3 < 114.14)"
+ },
+ {
+  "index": 8824,
+  "condition": "(d2 <= 1683.59) XNOR (d1b >= 376.45)"
+ },
+ {
+  "index": 8881,
+  "condition": "NOT (d1 >= 210.48)"
+ },
+ {
+  "index": 8920,
+  "condition": "(d4 < 719.08) NAND (d4 >= 705.55)"
+ },
+ {
+  "index": 8930,
+  "condition": "(d5 > 175.55) OR (d5 <= 151.84)"
+ },
+ {
+  "index": 8938,
+  "condition": "(d6 >= 1164.21) XOR (d1 > 147.82)"
+ },
+ {
+  "index": 8980,
+  "condition": "(d5 < 163.61) XNOR (d2 > 305.66)"
+ },
+ {
+  "index": 9036,
+  "condition": "NOT (d5 > 332.42)"
+ },
+ {
+  "index": 9037,
+  "condition": "(d4 > 2056.73) XOR (d2 > 561.10)"
+ },
+ {
+  "index": 9060,
+  "condition": "(d1 > 218.57) XNOR (d6 > 1044.88)"
+ },
+ {
+  "index": 9071,
+  "condition": "NOT (d1 > 218.90)"
+ },
+ {
+  "index": 9086,
+  "condition": "(d1 <= 242.90) AND (d3 <= 594.42)"
+ },
+ {
+  "index": 9165,
+  "condition": "(d1b > 433.47) NOR (d1b <= 408.57)"
+ },
+ {
+  "index": 9182,
+  "condition": "NOT (d1b > 628.24)"
+ },
+ {
+  "index": 9197,
+  "condition": "(d1b < 347.43) NAND (d6 < 2893.51)"
+ },
+ {
+  "index": 9199,
+  "condition": "(d4 < 701.58) OR (d6 >= 3422.26)"
+ },
+ {
+  "index": 9290,
+  "condition": "(d6 > 1511.06) XNOR (d5 <= 137.69)"
+ },
+ {
+  "index": 9304,
+  "condition": "(d4 >= 749.03) NOR (d4 > 2368.71)"
+ },
+ {
+  "index": 9315,
+  "condition": "(d5 < 167.15) NAND (d4 <= 2510.48)"
+ },
+ {
+  "index": 9343,
+  "condition": "(d3 <= 126.75) NOR (d4 <= 90.29)"
+ },
+ {
+  "index": 9360,
+  "condition": "(d1 <= 218.75) XNOR (d4 >= 1636.72)"
+ },
+ {
+  "index": 9386,
+  "condition": "NOT (d6 <= 6.82)"
+ },
+ {
+  "index": 9459,
+  "condition": "NOT (d1b > 400.62)"
+ },
+ {
+  "index": 9491,
+  "condition": "NOT (d3 > 120.72)"
+ },
+ {
+  "index": 9524,
+  "condition": "(d5 > 136.66) XOR (d1 >= 777.08)"
+ },
+ {
+  "index": 9532,
+  "condition": "(d5 <= 355.94) AND (d1b <= 1125.77)"
+ },
+ {
+  "index": 9534,
+  "condition": "(d1b <= 1299.21) NOR (d4 <= 1654.40)"
+ },
+ {
+  "index": 9614,
+  "condition": "NOT (d4 >= 423.78)"
+ },
+ {
+  "index": 9615,
+  "condition": "(d1b < 416.90) NOR (d5 > 171.14)"
+ },
+ {
+  "index": 9659,
+  "condition": "NOT (d5 < 150.50)"
+ },
+ {
+  "index": 9666,
+  "condition": "(d5 < 151.66) XOR (d4 < 505.09)"
+ },
+ {
+  "index": 9680,
+  "condition": "NOT (d5 < 139.64)"
+ },
+ {
+  "index": 9684,
+  "condition": "(d4 > 1002.81) OR (d2 >= 567.77)"
+ },
+ {
+  "index": 9695,
+  "condition": "NOT (d4 > 674.91)"
+ },
+ {
+  "index": 9705,
+  "condition": "(d1 >= 1432.66) XNOR (d5 < 156.34)"
+ },
+ {
+  "index": 9746,
+  "condition": "(d5 > 161.37) XNOR (d5 > 406.79)"
+ },
+ {
+  "index": 9753,
+  "condition": "(d5 >= 163.46) NAND (d2 >= 523.91)"
+ },
+ {
+  "index": 9757,
+  "condition": "(d6 <= 1991.13) XOR (d1b < 1643.13)"
+ },
+ {
+  "index": 9786,
+  "condition": "(d5 <= 232.90) NOR (d1 >= 202.16)"
+ },
+ {
+  "index": 9877,
+  "condition": "(d1b >= 361.87) XOR (d4 >= 655.17)"
+ },
+ {
+  "index": 9898,
+  "condition": "(d1b > 390.65) XNOR (d6 < 147.89)"
+ },
+ {
+  "index": 9912,
+  "condition": "NOT (d1b >= 391.09)"
+ },
+ {
+  "index": 9918,
+  "condition": "(d6 > 941.01) XOR (d2 < 587.57)"
+ },
+ {
+  "index": 9924,
+  "condition": "(d4 < 263.16) NOR (d1b >= 1768.44)"
+ },
+ {
+  "index": 9959,
+  "condition": "(d3 <= 117.92) XNOR (d1b > 257.76)"
+ },
+ {
+  "index": 9962,
+  "condition": "(d2 < 820.79) AND (d5 > 156.79)"
+ },
+ {
+  "index": 9996,
+  "condition": "(d5 > 31.34) XOR (d4 <= 0.37)"
+ },
+ {
+  "index": 10007,
+  "condition": "(d2 <= 547.50) XNOR (d3 < 552.59)"
+ },
+ {
+  "index": 10068,
+  "condition": "(d1 <= 1793.48) AND (d6 > 2807.70)"
+ },
+ {
+  "index": 10116,
+  "condition": "(d1b >= 380.92) NOR (d6 >= 2653.47)"
+ },
+ {
+  "index": 10166,
+  "condition": "(d1b > 352.68) NAND (d1b < 669.64)"
+ },
+ {
+  "index": 10199,
+  "condition": "NOT (d1b >= 398.48)"
+ },
+ {
+  "index": 10253,
+  "condition": "(d4 <= 1531.73) XOR (d4 <= 689.37)"
+ },
+ {
+  "index": 10255,
+  "condition": "(d4 < 747.42) NOR (d1b > 446.80)"
+ },
+ {
+  "index": 10282,
+  "condition": "(d6 < 2593.02) NAND (d4 > 1729.49)"
+ },
+ {
+  "index": 10296,
+  "condition": "(d6 > 8.11) NAND (d1b < 1235.60)"
+ },
+ {
+  "index": 10312,
+  "condition": "(d5 < 167.80) AND (d1b < 487.79)"
+ },
+ {
+  "index": 10336,
+  "condition": "NOT (d1b < 389.81)"
+ },
+ {
+  "index": 10363,
+  "condition": "(d1b < 1051.14) NAND (d5 < 140.09)"
+ },
+ {
+  "index": 10427,
+  "condition": "(d1b > 1608.82) XOR (d3 > 394.72)"
+ },
+ {
+  "index": 10439,
+  "condition": "(d5 <= 330.52) NOR (d6 <= 3119.96)"
+ },
+ {
+  "index": 10441,
+  "condition": "(d5 < 126.37) NAND (d5 < 544.16)"
+ },
+ {
+  "index": 10463,
+  "condition": "(d3 < 110.72) AND (d3 <= 519.27)"
+ },
+ {
+  "index": 10549,
+  "condition": "(d6 >= 2588.69) XNOR (d2 > 563.43)"
+ },
+ {
+  "index": 10570,
+  "condition": "(d2 > 1133.80) XOR (d1 > 238.80)"
+ },
+ {
+  "index": 10657,
+  "condition": "(d1b < 381.86) XNOR (d2 > 2021.85)"
+ },
+ {
+  "index": 10658,
+  "condition": "NOT (d1 > 197.00)"
+ },
+ {
+  "index": 10682,
+  "condition": "(d3 >= 308.89) NAND (d5 <= 12.67)"
+ },
+ {
+  "index": 10732,
+  "condition": "(d1b > 364.20) OR (d1 > 677.08)"
+ },
+ {
+  "index": 10734,
+  "condition": "(d3 < 662.93) XNOR (d1 <= 212.83)"
+ },
+ {
+  "index": 10749,
+  "condition": "(d5 >= 81.31) NAND (d5 <= 155.90)"
+ },
+ {
+  "index": 10787,
+  "condition": "(d6 >= 334.83) OR (d1 >= 222.16)"
+ },
+ {
+  "index": 10809,
+  "condition": "(d3 < 110.21) NOR (d5 > 437.75)"
+ },
+ {
+  "index": 10813,
+  "condition": "(d5 > 286.80) OR (d1b >= 395.90)"
+ },
+ {
+  "index": 10828,
+  "condition": "(d6 <= 1022.06) XOR (d1 >= 230.23)"
+ },
+ {
+  "index": 10849,
+  "condition": "(d3 > 538.48) OR (d1b >= 397.11)"
+ },
+ {
+  "index": 10858,
+  "condition": "(d1 >= 249.66) XOR (d3 >= 673.48)"
+ },
+ {
+  "index": 10865,
+  "condition": "NOT (d5 < 151.02)"
+ },
+ {
+  "index": 10929,
+  "condition": "(d1b < 404.43) OR (d5 <= 61.27)"
+ },
+ {
+  "index": 10939,
+  "condition": "(d1 > 1058.72) XOR (d5 >= 159.64)"
+ },
+ {
+  "index": 10947,
+  "condition": "(d2 >= 532.02) XOR (d1b > 351.96)"
+ },
+ {
+  "index": 10951,
+  "condition": "(d6 < 25.72) OR (d5 >= 623.40)"
+ },
+ {
+  "index": 10997,
+  "condition": "(d1 > 1213.45) XNOR (d5 < 147.00)"
+ },
+ {
+  "index": 11009,
+  "condition": "(d3 > 73.38) XOR (d2 < 541.47)"
+ },
+ {
+  "index": 11025,
+  "condition": "(d5 <= 439.78) AND (d1b < 385.13)"
+ },
+ {
+  "index": 11045,
+  "condition": "(d1b < 414.62) XOR (d1 <= 1739.27)"
+ },
+ {
+  "index": 11063,
+  "condition": "(d2 < 400.23) XNOR (d4 > 717.86)"
+ },
+ {
+  "index": 11064,
+  "condition": "(d1 >= 241.95) AND (d6 < 2714.10)"
+ },
+ {
+  "index": 11084,
+  "condition": "(d1b < 411.36) XNOR (d2 >= 438.30)"
+ },
+ {
+  "index": 11105,
+  "condition": "(d2 <= 530.98) NOR (d2 >= 878.41)"
+ },
+ {
+  "index": 11148,
+  "condition": "(d3 <= 190.59) AND (d1b <= 375.23)"
+ },
+ {
+  "index": 11169,
+  "condition": "(d1 > 240.77) OR (d6 > 231.17)"
+ },
+ {
+  "index": 11193,
+  "condition": "(d4 > 2679.64) XNOR (d4 < 674.61)"
+ },
+ {
+  "index": 11196,
+  "condition": "(d4 <= 687.99) NAND (d1b < 1671.98)"
+ },
+ {
+  "index": 11230,
+  "condition": "NOT (d3 <= 126.87)"
+ },
+ {
+  "index": 11249,
+  "condition": "(d2 > 582.02) XNOR (d2 < 165.91)"
+ },
+ {
+  "index": 11294,
+  "condition": "(d3 > 122.36) NAND (d1b < 570.61)"
+ },
+ {
+  "index": 11303,
+  "condition": "(d4 >= 617.34) XNOR (d4 < 763.95)"
+ },
+ {
+  "index": 11306,
+  "condition": "(d1 < 1530.97) XNOR (d3 <= 114.63)"
+ },
+ {
+  "index": 11322,
+  "condition": "(d1b <= 1179.03) AND (d5 > 155.33)"
+ },
+ {
+  "index": 11335,
+  "condition": "NOT (d6 >= 1362.86)"
+ },
+ {
+  "index": 11348,
+  "condition": "(d3 > 370.78) XOR (d2 > 531.04)"
+ },
+ {
+  "index": 11359,
+  "condition": "(d6 < 3185.92) AND (d6 <= 17.01)"
+ },
+ {
+  "index": 11423,
+  "condition": "(d1b <= 367.56) XNOR (d3 > 36.42)"
+ },
+ {
+  "index": 11436,
+  "condition": "(d1 >= 1273.90) OR (d1b < 875.90)"
+ },
+ {
+  "index": 11443,
+  "condition": "(d6 <= 263.92) XNOR (d4 <= 1746.52)"
+ },
+ {
+  "index": 11460,
+  "condition": "(d5 >= 225.10) NAND (d6 >= 343.35)"
+ },
+ {
+  "index": 11462,
+  "condition": "(d2 >= 284.29) NAND (d2 < 561.34)"
+ },
+ {
+  "index": 11467,
+  "condition": "NOT (d4 < 753.67)"
+ },
+ {
+  "index": 11472,
+  "condition": "(d2 > 1194.49) AND (d5 < 354.07)"
+ },
+ {
+  "index": 11476,
+  "condition": "(d1 < 215.81) OR (d1 >= 1911.62)"
+ },
+ {
+  "index": 11506,
+  "condition": "(d5 > 168.44) XOR (d1b < 904.70)"
+ },
+ {
+  "index": 11528,
+  "condition": "(d2 <= 1503.07) XOR (d1b > 417.14)"
+ },
+ {
+  "index": 11530,
+  "condition": "(d1 > 781.04) OR (d1b > 391.55)"
+ },
+ {
+  "index": 11537,
+  "condition": "(d6 > 266.23) XOR (d5 >= 760.85)"
+ },
+ {
+  "index": 11561,
+  "condition": "(d5 >= 743.63) XNOR (d3 > 520.53)"
+ },
+ {
+  "index": 11574,
+  "condition": "(d2 <= 471.09) NOR (d4 >= 670.02)"
+ },
+ {
+  "index": 11590,
+  "condition": "(d2 >= 551.24) XNOR (d5 < 512.24)"
+ },
+ {
+  "index": 11597,
+  "condition": "(d6 <= 21.99) XOR (d3 <= 538.75)"
+ },
+ {
+  "index": 11617,
+  "condition": "(d3 < 121.91) OR (d1 > 1646.59)"
+ },
+ {
+  "index": 11619,
+  "condition": "(d4 > 678.26) OR (d2 >= 928.97)"
+ },
+ {
+  "index": 11635,
+  "condition": "(d1 < 175.20) XOR (d6 <= 269.81)"
+ },
+ {
+  "index": 11638,
+  "condition": "(d3 <= 136.10) NAND (d3 <= 109.04)"
+ },
+ {
+  "index": 11654,
+  "condition": "(d6 <= 2602.97) NAND (d5 > 129.26)"
+ },
+ {
+  "index": 11655,
+  "condition": "(d1 <= 36.74) NAND (d1 < 323.17)"
+ },
+ {
+  "index": 11729,
+  "condition": "(d1 >= 1463.65) OR (d1 <= 222.86)"
+ },
+ {
+  "index": 11763,
+  "condition": "NOT (d1b <= 347.84)"
+ },
+ {
+  "index": 11767,
+  "condition": "NOT (d1 > 211.21)"
+ },
+ {
+  "index": 11792,
+  "condition": "(d3 > 759.64) XNOR (d3 >= 671.20)"
+ },
+ {
+  "index": 11871,
+  "condition": "(d1 >= 215.24) XNOR (d1 > 670.18)"
+ },
+ {
+  "index": 11943,
+  "condition": "(d3 >= 357.63) OR (d4 > 74.29)"
+ },
+ {
+  "index": 11961,
+  "condition": "(d4 <= 2185.39) NAND (d2 > 533.05)"
+ },
+ {
+  "index": 11967,
+  "condition": "(d1b > 388.71) XOR (d5 >= 73.63)"
+ },
+ {
+  "index": 12025,
+  "condition": "(d6 < 2623.64) XNOR (d3 >= 114.67)"
+ },
+ {
+  "index": 12047,
+  "condition": "(d1b > 727.88) NOR (d1 > 245.21)"
+ },
+ {
+  "index": 12105,
+  "condition": "NOT (d1 <= 189.26)"
+ },
+ {
+  "index": 12113,
+  "condition": "(d5 > 342.06) OR (d2 <= 547.59)"
+ },
+ {
+  "index": 12115,
+  "condition": "(d5 <= 155.95) NOR (d3 >= 146.73)"
+ },
+ {
+  "index": 12170,
+  "condition": "(d3 < 126.56) NOR (d3 >= 483.81)"
+ },
+ {
+  "index": 12171,
+  "condition": "(d4 <= 678.35) NOR (d5 > 236.82)"
+ },
+ {
+  "index": 12185,
+  "condition": "(d4 > 666.82) AND (d6 < 1596.27)"
+ },
+ {
+  "index": 12190,
+  "condition": "(d1b > 151.35) NAND (d2 < 560.95)"
+ },
+ {
+  "index": 12228,
+  "condition": "(d6 <= 31.88) OR (d6 >= 505.33)"
+ },
+ {
+  "index": 12273,
+  "condition": "NOT (d6 <= 1934.57)"
+ },
+ {
+  "index": 12278,
+  "condition": "(d1b > 416.52) XOR (d3 < 412.31)"
+ },
+ {
+  "index": 12281,
+  "condition": "(d6 > 2148.53) NOR (d5 < 135.94)"
+ },
+ {
+  "index": 12303,
+  "condition": "NOT (d6 >= 2377.18)"
+ },
+ {
+  "index": 12379,
+  "condition": "(d4 < 1313.43) NAND (d3 > 102.65)"
+ },
+ {
+  "index": 12444,
+  "condition": "(d3 > 395.76) XOR (d1b >= 389.39)"
+ },
+ {
+  "index": 12446,
+  "condition": "(d1b <= 360.98) AND (d6 >= 12.74)"
+ },
+ {
+  "index": 12451,
+  "condition": "(d2 <= 602.66) XOR (d5 <= 155.53)"
+ },
+ {
+  "index": 12465,
+  "condition": "(d1b <= 443.63) XOR (d6 > 253.29)"
+ },
+ {
+  "index": 12466,
+  "condition": "(d2 >= 532.91) XNOR (d5 >= 400.79)"
+ },
+ {
+  "index": 12480,
+  "condition": "NOT (d5 <= 143.17)"
+ },
+ {
+  "index": 12524,
+  "condition": "(d3 <= 111.90) OR (d1 > 1323.66)"
+ },
+ {
+  "index": 12538,
+  "condition": "(d1 < 244.93) NOR (d2 >= 746.23)"
+ },
+ {
+  "index": 12562,
+  "condition": "(d5 <= 147.22) XNOR (d1 <= 1647.88)"
+ },
+ {
+  "index": 12575,
+  "condition": "(d2 >= 545.86) OR (d4 <= 228.71)"
+ },
+ {
+  "index": 12584,
+  "condition": "(d5 < 605.47) AND (d4 < 752.71)"
+ },
+ {
+  "index": 12593,
+  "condition": "(d3 <= 117.45) XNOR (d2 < 257.05)"
+ },
+ {
+  "index": 12633,
+  "condition": "(d1 >= 546.92) OR (d2 <= 520.21)"
+ },
+ {
+  "index": 12639,
+  "condition": "NOT (d3 < 119.64)"
+ },
+ {
+  "index": 12686,
+  "condition": "(d2 <= 874.06) NAND (d1b >= 361.20)"
+ },
+ {
+  "index": 12729,
+  "condition": "(d1b >= 400.31) OR (d1b > 1313.20)"
+ },
+ {
+  "index": 12736,
+  "condition": "(d3 >= 275.85) NOR (d6 <= 1166.75)"
+ },
+ {
+  "index": 12746,
+  "condition": "(d1b < 842.34) XNOR (d3 > 116.59)"
+ },
+ {
+  "index": 12793,
+  "condition": "NOT (d5 <= 142.60)"
+ },
+ {
+  "index": 12795,
+  "condition": "(d1 <= 1918.29) XOR (d3 > 124.70)"
+ },
+ {
+  "index": 12809,
+  "condition": "(d4 > 749.64) XNOR (d5 >= 187.01)"
+ },
+ {
+  "index": 12813,
+  "condition": "NOT (d1b > 405.95)"
+ },
+ {
+  "index": 12822,
+  "condition": "(d3 >= 122.04) XOR (d2 >= 1651.82)"
+ },
+ {
+  "index": 12855,
+  "condition": "(d1b <= 1877.14) AND (d1 < 225.81)"
+ },
+ {
+  "index": 12879,
+  "condition": "(d3 < 116.52) OR (d1b > 781.85)"
+ },
+ {
+  "index": 12883,
+  "condition": "(d4 < 880.12) NAND (d5 < 153.59)"
+ },
+ {
+  "index": 12914,
+  "condition": "(d4 >= 114.44) XNOR (d1 >= 207.54)"
+ },
+ {
+  "index": 12922,
+  "condition": "(d5 < 159.11) XOR (d1 <= 1503.01)"
+ },
+ {
+  "index": 12991,
+  "condition": "(d5 <= 161.84) XNOR (d1b > 137.33)"
+ },
+ {
+  "index": 13008,
+  "condition": "(d4 < 703.99) XNOR (d2 > 154.10)"
+ },
+ {
+  "index": 13017,
+  "condition": "(d5 < 155.59) XOR (d4 <= 5.50)"
+ },
+ {
+  "index": 13018,
+  "condition": "(d4 > 670.27) NAND (d3 < 250.42)"
+ },
+ {
+  "index": 13036,
+  "condition": "(d5 > 132.09) XNOR (d6 > 808.94)"
+ },
+ {
+  "index": 13111,
+  "condition": "(d2 > 572.63) OR (d4 >= 970.69)"
+ },
+ {
+  "index": 13120,
+  "condition": "(d5 > 264.15) XNOR (d3 > 118.81)"
+ },
+ {
+  "index": 13202,
+  "condition": "(d3 > 58.27) XNOR (d4 <= 677.32)"
+ },
+ {
+  "index": 13226,
+  "condition": "(d5 < 142.85) XNOR (d5 <= 194.35)"
+ },
+ {
+  "index": 13254,
+  "condition": "(d1b < 1811.58) XNOR (d1 > 225.80)"
+ },
+ {
+  "index": 13268,
+  "condition": "(d1b <= 406.68) NAND (d5 < 164.42)"
+ },
+ {
+  "index": 13292,
+  "condition": "(d1 <= 204.30) NOR (d3 < 68.03)"
+ },
+ {
+  "index": 13306,
+  "condition": "(d1b >= 370.61) AND (d1b < 1240.80)"
+ },
+ {
+  "index": 13323,
+  "condition": "(d1b < 364.63) NAND (d6 < 2404.06)"
+ },
+ {
+  "index": 13326,
+  "condition": "(d4 >= 693.09) OR (d5 >= 633.13)"
+ },
+ {
+  "index": 13332,
+  "condition": "NOT (d3 > 115.33)"
+ },
+ {
+  "index": 13424,
+  "condition": "(d6 >= 615.65) NOR (d1b < 353.87)"
+ },
+ {
+  "index": 13429,
+  "condition": "(d4 >= 2021.42) XOR (d5 <= 168.45)"
+ },
+ {
+  "index": 13451,
+  "condition": "NOT (d6 >= 18.71)"
+ },
+ {
+  "index": 13463,
+  "condition": "(d4 <= 1904.56) XOR (d6 > 1846.64)"
+ },
+ {
+  "index": 13468,
+  "condition": "(d6 <= 2763.75) NAND (d1 <= 206.32)"
+ },
+ {
+  "index": 13472,
+  "condition": "NOT (d1b <= 393.90)"
+ },
+ {
+  "index": 13480,
+  "condition": "(d4 < 594.28) XNOR (d1b >= 413.85)"
+ },
+ {
+  "index": 13484,
+  "condition": "NOT (d2 <= 571.54)"
+ },
+ {
+  "index": 13523,
+  "condition": "(d5 >= 491.65) XNOR (d6 < 6.56)"
+ },
+ {
+  "index": 13532,
+  "condition": "(d3 > 98.86) XOR (d3 < 545.61)"
+ },
+ {
+  "index": 13547,
+  "condition": "(d4 >= 800.24) XOR (d1 > 210.52)"
+ },
+ {
+  "index": 13552,
+  "condition": "(d3 < 109.56) XNOR (d6 <= 3329.66)"
+ },
+ {
+  "index": 13557,
+  "condition": "(d6 >= 1695.43) OR (d2 >= 546.73)"
+ },
+ {
+  "index": 13567,
+  "condition": "(d4 > 690.00) NAND (d1b > 240.58)"
+ },
+ {
+  "index": 13586,
+  "condition": "(d3 < 41.06) NAND (d2 < 1490.75)"
+ },
+ {
+  "index": 13618,
+  "condition": "(d3 > 537.45) NOR (d4 >= 627.69)"
+ },
+ {
+  "index": 13635,
+  "condition": "(d3 > 115.69) XOR (d3 < 434.73)"
+ },
+ {
+  "index": 13644,
+  "condition": "(d1 > 236.74) XNOR (d3 < 140.51)"
+ },
+ {
+  "index": 13658,
+  "condition": "(d6 < 7.17) OR (d4 > 1982.66)"
+ },
+ {
+  "index": 13668,
+  "condition": "NOT (d2 > 230.07)"
+ },
+ {
+  "index": 13695,
+  "condition": "NOT (d1 < 222.90)"
+ },
+ {
+  "index": 13728,
+  "condition": "(d3 <= 628.27) XNOR (d3 > 116.19)"
+ },
+ {
+  "index": 13741,
+  "condition": "(d3 < 111.33) XOR (d3 >= 404.89)"
+ },
+ {
+  "index": 13841,
+  "condition": "NOT (d5 > 165.32)"
+ },
+ {
+  "index": 13855,
+  "condition": "(d4 <= 884.68) XOR (d4 >= 658.88)"
+ },
+ {
+  "index": 13882,
+  "condition": "NOT (d1b <= 1549.45)"
+ },
+ {
+  "index": 13898,
+  "condition": "(d2 < 1683.93) XNOR (d1b < 418.67)"
+ },
+ {
+  "index": 13932,
+  "condition": "(d6 > 254.57) XOR (d4 >= 765.86)"
+ },
+ {
+  "index": 13940,
+  "condition": "(d4 <= 660.09) XOR (d4 >= 803.63)"
+ },
+ {
+  "index": 13945,
+  "condition": "(d6 > 22.48) XOR (d5 < 329.48)"
+ },
+ {
+  "index": 13961,
+  "condition": "(d5 < 221.21) XNOR (d2 > 609.25)"
+ },
+ {
+  "index": 13972,
+  "condition": "NOT (d5 <= 147.87)"
+ },
+ {
+  "index": 13993,
+  "condition": "(d4 < 2413.75) NAND (d2 < 823.57)"
+ },
+ {
+  "index": 14000,
+  "condition": "(d1b <= 368.11) NOR (d1 >= 753.55)"
+ },
+ {
+  "index": 14005,
+  "condition": "(d1 < 236.98) XNOR (d3 <= 655.19)"
+ },
+ {
+  "index": 14016,
+  "condition": "(d1b >= 407.85) XNOR (d4 >= 62.22)"
+ },
+ {
+  "index": 14024,
+  "condition": "(d6 > 26.45) AND (d1 < 691.46)"
+ },
+ {
+  "index": 14040,
+  "condition": "(d6 < 388.73) AND (d1 > 232.84)"
+ },
+ {
+  "index": 14043,
+  "condition": "(d6 > 2355.29) NOR (d5 > 544.29)"
+ },
+ {
+  "index": 14045,
+  "condition": "(d5 < 145.46) XNOR (d1 < 700.62)"
+ },
+ {
+  "index": 14054,
+  "condition": "(d1b >= 1064.50) XNOR (d5 > 156.87)"
+ },
+ {
+  "index": 14106,
+  "condition": "(d1b >= 323.94) XNOR (d1b < 335.05)"
+ },
+ {
+  "index": 14155,
+  "condition": "(d4 > 683.51) NAND (d1b < 1451.19)"
+ },
+ {
+  "index": 14157,
+  "condition": "(d1 < 189.59) XOR (d4 <= 506.76)"
+ },
+ {
+  "index": 14181,
+  "condition": "(d4 >= 720.34) OR (d2 > 701.25)"
+ },
+ {
+  "index": 14218,
+  "condition": "(d1b < 365.90) NAND (d6 <= 1989.65)"
+ },
+ {
+  "index": 14228,
+  "condition": "(d6 > 576.33) XNOR (d6 < 43.79)"
+ },
+ {
+  "index": 14233,
+  "condition": "NOT (d2 <= 572.50)"
+ },
+ {
+  "index": 14245,
+  "condition": "(d6 > 2811.44) XNOR (d5 >= 157.24)"
+ },
+ {
+  "index": 14251,
+  "condition": "(d6 > 1748.98) XNOR (d1b <= 379.61)"
+ },
+ {
+  "index": 14253,
+  "condition": "NOT (d1 >= 199.62)"
+ },
+ {
+  "index": 14272,
+  "condition": "(d1 < 228.85) AND (d4 > 219.88)"
+ },
+ {
+  "index": 14304,
+  "condition": "(d1b <= 356.21) XOR (d5 > 238.12)"
+ },
+ {
+  "index": 14322,
+  "condition": "(d1b > 419.99) NAND (d4 >= 548.16)"
+ },
+ {
+  "index": 14355,
+  "condition": "(d1 > 215.49) NAND (d3 < 154.06)"
+ },
+ {
+  "index": 14386,
+  "condition": "(d6 <= 1393.34) NAND (d3 < 103.10)"
+ },
+ {
+  "index": 14444,
+  "condition": "(d5 > 26.14) AND (d6 > 21.47)"
+ },
+ {
+  "index": 14520,
+  "condition": "(d1 < 1607.76) AND (d4 > 702.20)"
+ },
+ {
+  "index": 14532,
+  "condition": "(d2 > 616.36) NOR (d2 < 573.32)"
+ },
+ {
+  "index": 14545,
+  "condition": "(d4 <= 1141.40) AND (d2 < 2012.12)"
+ },
+ {
+  "index": 14610,
+  "condition": "(d2 >= 576.65) NAND (d4 <= 938.34)"
+ },
+ {
+  "index": 14629,
+  "condition": "(d1 <= 1775.15) AND (d1 < 226.89)"
+ },
+ {
+  "index": 14699,
+  "condition": "(d6 >= 19.11) XNOR (d6 <= 1265.68)"
+ },
+ {
+  "index": 14713,
+  "condition": "(d2 <= 554.12) XOR (d4 >= 519.67)"
+ },
+ {
+  "index": 14727,
+  "condition": "(d4 < 2188.65) NAND (d4 < 129.69)"
+ },
+ {
+  "index": 14742,
+  "condition": "(d5 <= 186.44) AND (d5 <= 151.71)"
+ },
+ {
+  "index": 14773,
+  "condition": "(d1 >= 221.79) XNOR (d2 > 1643.07)"
+ },
+ {
+  "index": 14779,
+  "condition": "(d4 > 695.13) XOR (d1b < 451.84)"
+ },
+ {
+  "index": 14797,
+  "condition": "NOT (d1 < 251.18)"
+ },
+ {
+  "index": 14802,
+  "condition": "(d6 >= 987.30) OR (d1 < 187.02)"
+ },
+ {
+  "index": 14803,
+  "condition": "NOT (d3 < 113.52)"
+ },
+ {
+  "index": 14854,
+  "condition": "(d4 <= 684.48) AND (d1b < 1080.79)"
+ },
+ {
+  "index": 14888,
+  "condition": "(d1b < 400.08) AND (d1 >= 109.82)"
+ },
+ {
+  "index": 14889,
+  "condition": "(d5 >= 151.83) XOR (d2 <= 100.97)"
+ },
+ {
+  "index": 14915,
+  "condition": "(d6 < 127.65) OR (d6 >= 256.97)"
+ },
+ {
+  "index": 14951,
+  "condition": "(d1b > 1898.36) OR (d4 < 786.97)"
+ },
+ {
+  "index": 14999,
+  "condition": "(d1 >= 1765.88) NOR (d4 < 670.83)"
+ },
+ {
+  "index": 15036,
+  "condition": "(d4 > 2708.22) XOR (d3 <= 342.69)"
+ },
+ {
+  "index": 15076,
+  "condition": "(d4 > 696.51) XOR (d6 <= 1432.18)"
+ },
+ {
+  "index": 15086,
+  "condition": "NOT (d1b < 388.99)"
+ },
+ {
+  "index": 15092,
+  "condition": "NOT (d5 <= 161.21)"
+ },
+ {
+  "index": 15131,
+  "condition": "NOT (d4 < 647.93)"
+ },
+ {
+  "index": 15214,
+  "condition": "(d5 <= 155.64) XOR (d2 > 1803.07)"
+ },
+ {
+  "index": 15216,
+  "condition": "(d1b >= 674.54) XNOR (d6 > 24.67)"
+ },
+ {
+  "index": 15237,
+  "condition": "(d5 <= 148.96) XOR (d6 < 250.91)"
+ },
+ {
+  "index": 15241,
+  "condition": "NOT (d6 >= 18.10)"
+ },
+ {
+  "index": 15251,
+  "condition": "NOT (d4 > 726.38)"
+ },
+ {
+  "index": 15282,
+  "condition": "NOT (d2 <= 575.96)"
+ },
+ {
+  "index": 15294,
+  "condition": "NOT (d2 > 1606.25)"
+ },
+ {
+  "index": 15342,
+  "condition": "(d2 < 585.58) XOR (d1b > 1255.14)"
+ }
+]

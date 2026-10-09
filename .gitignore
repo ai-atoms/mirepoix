@@ -2,7 +2,21 @@
 base/
 data/*
 !data/sample/
+!data/fpa70a/
+!data/d567b/
+!data/npj_components/
+data/fpa70a/descriptor/
+data/fpa70a/images/
+data/npj_components/models/
 output/
+paper/
+temp/
+results/
+maxim/
+old/
+saved_models/
+*.csv
+*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

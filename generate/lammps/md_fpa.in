@@ -1,0 +1,106 @@
+# LAMMPS Input File
+# Authors: /camilofs @ github.com
+# Input file for FPA sim with 1 atom type
+# metal : [m] = g/mol, [x] = A, [E]=eV, [q]=e, [T]=K, [t]=ps, [P]=bars=1e5Pa
+
+# --- Static variables ---
+variable    rseed            equal 486215937 # RNG seed
+variable    temperature      equal 300
+variable    n_atoms_moved    equal 200
+variable    type_atom        equal 1
+variable    tot_n_isrtd_at   equal 128000 # > 100000 (run_steps/frequency)
+variable    frequency        equal 2000
+variable    frequency_irst   equal 10 #2000/200
+variable    timestep_md      equal 0.001     # 1 fs
+variable    pure_therm       equal 10000     # 10 ps
+variable    total_therm      equal 1000000   # 1 ns
+
+# --- Initialize simulation ---
+clear
+units	metal
+dimension 3
+boundary p p p
+
+# --- Neighbours ---
+atom_style atomic
+atom_modify map array
+atom_modify sort 1000 0.00
+neighbor 0.01 bin #0.02 is okay for 20x20x20
+neigh_modify delay 0 every 10 check yes one 200 page 1000000
+# neighbor 2.0 bin
+# neigh_modify delay 10 check yes
+timestep ${timestep_md}
+
+# --- Read Structure ---
+read_data  70.lmp
+
+group	Fe type 1
+mass	1  55.845
+
+variable bxlow equal xlo+0.1
+variable bylow equal ylo+0.1
+variable bzlow equal zlo+0.1
+
+variable bxhigh equal xhi-0.1
+variable byhigh equal yhi-0.1
+variable bzhigh equal zhi-0.1
+
+variable midx equal (xhi-xlo)/2.0
+variable midy equal (yhi-ylo)/2.0
+variable midz equal (zhi-zlo)/2.0
+variable variance equal  (${midx}+${midy}+${midz})*4.0
+
+region mybox block  ${bxlow} ${bxhigh} ${bylow} ${byhigh} ${bzlow} ${bxhigh}
+variable natoms equal atoms
+
+# --- Define Interatomic Potential ---
+print "Using Malerba et al. 2010..."
+pair_style eam/alloy
+pair_coeff * * M07_eam.fs Fe
+
+thermo            1000
+thermo_style custom step etotal pxx pyy pzz pxy pxz pyz
+
+thermo_style      custom step etotal pe ke fnorm temp pxx pyy pzz pxy pxz pyz press vol
+thermo_modify	  lost warn
+
+dump mdstr all custom 2000 box.*.dump id mass type x y z
+
+fix               box1 all box/relax iso 0.0
+min_style         cg
+min_modify line   quadratic
+minimize          0 5e-3 5000 100000
+unfix		      box1
+
+write_data        relaxed_config.lmp
+run               0
+undump mdstr
+
+# --- MD Thermalization ---
+print "Initializing thermalisation..."
+timestep ${timestep_md}
+
+reset_timestep 0
+dump pos all custom 4000 md_config_*.xyz id type x y z vx vy vz 
+
+# Initial velocities
+variable init_temperature equal 2*${temperature}
+
+velocity all create ${init_temperature} ${rseed} dist gaussian
+
+# --- equilibrating and generating defects...
+restart 10000 inter1.restart inter2.restart
+
+# Thermostat 1
+fix md1 all nvt temp ${temperature} ${temperature} 0.4
+fix md2 all temp/berendsen ${temperature} ${temperature} 100.0
+run ${pure_therm}
+
+fix md4 all evaporate ${frequency} ${n_atoms_moved} mybox ${rseed}
+fix md5 all deposit ${tot_n_isrtd_at} ${type_atom} ${frequency_irst} ${rseed} near 1.4 region mybox attempt 200
+
+run ${total_therm}
+write_data end_config_0.lmp
+write_restart system_final.restart
+
+print "-- all done --"

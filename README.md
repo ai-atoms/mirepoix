@@ -38,7 +38,7 @@ The raw bSO4 vectors `(55, N)` and the per-atom distortion-score calculation are
 
 ## Data
 
-The input data are distributed separately through Zenodo: _DOI to be added_. Download and extract the archive in a `data/` folder at the root of the repository. Data and results (`data/`, `results/`, `*.csv`, `*.png`) are not tracked by git.
+The input data are distributed separately through Zenodo: [10.5281/zenodo.23312653](https://doi.org/10.5281/zenodo.23312653). Download and extract the archive in a `data/` folder at the root of the repository. Data and results (`data/`, `results/`, `*.csv`, `*.png`) are not tracked by git.
 
 ## Environment
 
@@ -75,7 +75,7 @@ Results are written to `data/d567b/results/`. Trained models are in `data/npj_co
 
 ## How to cite
 
-If you use this code or data, please cite the paper above.
+If you use this code or data from Zenodo ([10.5281/zenodo.23312653](https://doi.org/10.5281/zenodo.23312653)), please cite the paper above.
 
 ## Authors
 
